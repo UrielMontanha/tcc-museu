@@ -6,10 +6,11 @@
     <title>Museu</title>
 </head>
 <body>
-    <form action="index.php" method="POST"></form>
+    <form action="index.php" method="POST">
     <fieldset>
         <legend> <h1> Museu </h1> </legend>
     </fieldset>
     
+    </form>
 </body>
 </html>
