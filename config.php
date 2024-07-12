@@ -1,0 +1,10 @@
+<?php
+
+$config = [
+    'host' => 'localhost',
+    'user' => 'root',
+    'pass' => '',
+    'db' => 'tcc-museu',
+//    'email' => 'uriel.2022316043@aluno.iffar.edu.br',
+//    'senha_email' => 'ffxqckfxkyzbzqld'
+];
