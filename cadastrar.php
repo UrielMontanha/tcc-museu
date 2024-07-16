@@ -1,13 +1,15 @@
 <?php
+session_start();
 
 require_once "conecta.php";
 $conexao = conectar();
 
 $nome = $_POST['nome'];
+$senha = $_POST['senha'];
 $email = $_POST['email'];
 $data_nasc = $_POST['data_nasc'];
 $cpf = $_POST['cpf'];
-$senha = $_POST['senha'];
+
 
 $sql = "INSERT INTO usuario (nome, email, data_nasc, cpf, senha) VALUES ('$nome', '$email', '$data_nasc', '$cpf', '$senha')";
 
@@ -21,4 +23,5 @@ if ($resultado === false) {
     echo " <br> <br> Erro ao inserir novo usuário!" . mysqli_errno($conexao) . ": " . mysqli_error($conexao);
     die();
 }
+$_SESSION['usuario'] = $nome;
 header("location: index.php");

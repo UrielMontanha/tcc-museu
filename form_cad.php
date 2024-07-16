@@ -17,14 +17,14 @@
       <br>
 
       <input type="text" name="nome" placeholder="Nome"> <br> <br>
+      <input type="password" name="senha" placeholder="Senha"> <br> <br>
       <input type="email" name="email" placeholder="Email"> <br> <br>
       <input type="date" name="data_nasc"> <br> <br>
-      <input type="text" name="cpf" placeholder="CPF"> <br> <br>
-      <input type="password" name="senha" placeholder="Senha">
+      <input type="text" name="cpf" placeholder="CPF">
 
       <br> <br>
 
-      <a href="cadastrar.php">Cadastrar</a>
+      <input type="submit" value="Cadastrar">
     </div>
 
 
