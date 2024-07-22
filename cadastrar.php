@@ -24,4 +24,4 @@ if ($resultado === false) {
     die();
 }
 $_SESSION['usuario'] = $nome;
-header("location: index.php");
+header("location: form_login.php");
