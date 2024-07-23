@@ -23,9 +23,9 @@
 
             <br> <br>
 
-            <input type="submit" value="Recuperar senha">
-            <input type="submit" value="Logar">
-            
+            <button><a href="recuperar-senha.php">Recuperar senha</a></button>
+            <button><a href="login.php">Logar</a></button>
+
         </div>
 
 </body>
