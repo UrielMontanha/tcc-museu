@@ -25,7 +25,7 @@
       <br> <br>
 
       <button><a href="form_login.php">Ir para login</a></button>
-      <button><a href="cadastrar.php">Cadastrar-se</a></button>
+      <input type="submit" value="enviar">
       
     </div>
 

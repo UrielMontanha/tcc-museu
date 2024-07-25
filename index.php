@@ -1,4 +1,6 @@
-<? session_start(); ?>
+<?php
+session_start(); 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +16,7 @@
 
   <div class="container-fluid">
 
-    <h1>Museu Municipal</h1>
+    <h1>Museu Municipal OLá <?php echo $_SESSION['usuario'];?></h1>
 
     <br> <br>
 

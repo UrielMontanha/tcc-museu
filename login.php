@@ -7,9 +7,6 @@ $conexao = conectar();
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-require_once "conexao.php";
-$conexao = conectar();
-
 $sql = "SELECT * FROM usuario WHERE email='$email'";
 
 $resultado = executarSQL($conexao, $sql);

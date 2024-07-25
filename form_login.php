@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+require_once "conecta.php";
+$conexao = conectar(); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +19,11 @@
     <form action="login.php" method="POST">
 
         <div class="container">
-            <h1>Login</h1>
+            <h1>Login! Olá <?php echo $_SESSION['usuario']?></h1>
 
             <br>
-
-            <input type="text" name="nome" placeholder="Nome"> <br> <br>
-            <input type="password" name="senha" placeholder="Senha"> <br> <br>
             <input type="email" name="email" placeholder="Email"> <br> <br>
-            <input type="text" name="cpf" placeholder="CPF">
+            <input type="password" name="senha" placeholder="Senha"> <br> <br>
 
             <br> <br>
 
