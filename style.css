@@ -5,10 +5,21 @@
 }
 
 .container{
+    max-width: 500px;
     background-color: #123155;
     color: white;
     padding: 15px;
     margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 510px;
+}
+
+input[type='text'], input[type='password'], input[type='email'], button{
+    max-width: min-content;
+    left: 45%;
+    position: relative;
 }
 
 .col-9 h1{
