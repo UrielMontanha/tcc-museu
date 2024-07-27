@@ -16,7 +16,7 @@ session_start();
 
   <div class="container-fluid">
 
-    <h1>Museu Municipal OLá <?php echo $_SESSION['usuario'];?></h1>
+    <h1>Museu Municipal</h1>
 
     <br> <br>
 
@@ -28,11 +28,13 @@ session_start();
         <a class="nav-link" href="form_login.php">Logar-se</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="contatos.php">Contatos</a>
       </li>
     </ul>
 
   </div>
+
+  <br><br><br><br><br><br><br><br> <h4> OLá <?php echo $_SESSION['usuario'];?> </h4>
 
   <!--<//?php
 echo $_SESSION['usuario'] . "ss";
