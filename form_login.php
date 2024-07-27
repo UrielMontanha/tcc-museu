@@ -19,7 +19,7 @@ $conexao = conectar();
     <form action="login.php" method="POST">
 
         <div class="container">
-            <h1>Login! Olá <?php echo $_SESSION['usuario']?></h1>
+            <h1>Login! Olá <?php // echo $_SESSION['usuario']?></h1>
 
             <br>
             <input type="email" name="email" placeholder="Email"> <br> <br>
