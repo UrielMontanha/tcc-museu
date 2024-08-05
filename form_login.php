@@ -18,7 +18,6 @@ $conexao = conectar();
 <body>
     <form action="login.php" method="POST">
 
-        <div class="container">
             <h1>Login! Olá <?php // echo $_SESSION['usuario']?></h1>
 
             <br>
@@ -30,8 +29,5 @@ $conexao = conectar();
             <button><a href="recuperar-senha.php">Recuperar senha</a></button>
             <button><a href="login.php">Logar</a></button>
 
-        </div>
-
 </body>
-
 </html>

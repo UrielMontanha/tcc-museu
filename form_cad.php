@@ -5,14 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
-  <?php include 'links.php' ?>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
   <form action="cadastrar.php" method="POST">
 
-    <div class="container">
-      <h1>Cadastrar</h1>
+    <!--  <h1>Cadastrar</h1>
 
       <br>
 
@@ -26,9 +27,26 @@
 
       <button><a href="form_login.php">Ir para login</a></button>
       <input type="submit" value="enviar">
+-->
+
+<div class="row">
+  <div class="col s12 14 offset-14">
+    <div class="card">
+
+      <div class="card-action red white-text">
+        <h1>Login</h1>
+      </div>
+
+        <div class="card-content">
+          <div class="form-field">
+            <label for="username">Username</label>
+            <input type="text" id="username">
+          </div>
+        </div>
       
     </div>
-
+  </div>
+</div>
 
 </body>
 

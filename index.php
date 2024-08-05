@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,37 +9,25 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Página Inicial </title>
-  <?php include("links.php"); ?>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-
 <body>
 
-  <div class="container-fluid">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Museu Municipal</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="form_login.php">Logar-se</a></li>
+        <li><a href="form_cad.php">Cadastrar-se</a></li>
+        <li><a href="collapsible.html"></a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h1>Museu Municipal</h1>
-
-    <br> <br>
-
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="form_cad.php">Cadastrar-se</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="form_login.php">Logar-se</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contatos.php">Contatos</a>
-      </li>
-    </ul>
-
-  </div>
-
-  <br><br><br><br><br><br><br><br> <h4> OLá <?php echo $_SESSION['usuario'];?> </h4>
-
-  <!--<//?php
-echo $_SESSION['usuario'] . "ss";
-?>-->
+  <br><br>
+  <h4> OLá <?php echo $_SESSION['usuario']; ?> </h4>
 
 </body>
-
 </html>
