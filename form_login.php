@@ -28,6 +28,7 @@ session_start();
                 <button type="submit" class="btn">Logar</button>
 
                 <div class="register-link">
+                    <p>Esqueceu senha? <a href=""></a></p>
                     <p>Não tem conta? <br><a href="form_cad.php">Cadastrar-se</a></p>
                 </div>
             </form>
