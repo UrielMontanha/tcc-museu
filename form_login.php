@@ -12,7 +12,7 @@ session_start();
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--Este link pega o Boxicons-->
 </head>
 <body>
-    <form action="login.php">
+    <form action="login.php" method="post">
         <div class="wrapper">
             <form action="">
                 <h1>Login</h1>
@@ -28,8 +28,9 @@ session_start();
                 <button type="submit" class="btn">Logar</button>
 
                 <div class="register-link">
-                    <p>Esqueceu senha? <a href=""></a></p>
-                    <p>Não tem conta? <br><a href="form_cad.php">Cadastrar-se</a></p>
+                    <p>Esqueceu senha? <a href="form_recuperar_senha.php"> Recupecar senha</a></p>
+                    <br>
+                    <p>Não tem conta? <a href="form_cad.php"> Cadastrar-se</a></p>
                 </div>
             </form>
         </div>

@@ -12,7 +12,7 @@ session_start();
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--Este link pega o Boxicons-->
 </head>
 <body>
-<form action="cadastrar.php">
+<form action="cadastrar.php" method="post">
         <div class="wrapper_cad">
             <form action="">
                 <h1>Cadastrar</h1>
