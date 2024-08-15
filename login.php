@@ -7,6 +7,8 @@ $conexao = conectar();
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
+$_SESSION['usuario'] = $email;
+
 $sql = "SELECT * FROM usuario WHERE email='$email'";
 
 $resultado = executarSQL($conexao, $sql);

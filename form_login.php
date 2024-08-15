@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Login </title>
-    <link rel="stylesheet" href="style_form_login.css">
+    <link rel="stylesheet" href="css/style_form_login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--Este link pega o Boxicons-->
 </head>
 <body>
