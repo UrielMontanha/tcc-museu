@@ -9,7 +9,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Cadastrar </title>
     <link rel="stylesheet" href="css/style_form_cad.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'><!--Este link pega o Boxicons-->
 </head>
 <body>
 <form action="cadastrar.php" method="post">
