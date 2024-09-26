@@ -25,9 +25,9 @@ session_start();
                 <div class="input-box_cad">
                     <input type="email" name="email" placeholder="Email" required>
                 </div>
-                <div class="input-box_cad">
+                <!--<div class="input-box_cad">
                     <input type="data" name="data_nasc" placeholder="Data de nascimento" required>
-                </div>
+                </div>-->
                 <div class="input-box_cad">
                     <input type="text" name="cpf" placeholder="CPF" required>
                 </div>

@@ -19,7 +19,21 @@ session_start();
 
   <?php include_once "header.php"; ?>
 
-  <!--  <nav id="sidebar">
+  <br><br>
+  <h4> OLá <?php echo $_SESSION['usuario']; ?> </h4>
+
+  <a href="museu.php">Objetos dos museus</a>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!--  <nav id="sidebar">
     <div id="user">
       <img src="css/imagens/ragnar.jpg" id="user_avatar" alt="Avatar">
 
@@ -54,10 +68,3 @@ session_start();
       O centro cultural oferece exposições que destacam a história e a cultura da região, incluindo uma interessante coleção de
       armas antigas e jogos tradicionais2. Recentemente, o prédio passou por uma renovação, o que foi muito bem recebido pela comunidade local2.
   -->
-
-  <br><br>
-  <h4> OLá <?php echo $_SESSION['usuario']; ?> </h4>
-
-</body>
-
-</html>

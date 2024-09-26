@@ -7,11 +7,11 @@ $conexao = conectar();
 $nome = $_POST['nome'];
 $senha = $_POST['senha'];
 $email = $_POST['email'];
-$data_nasc = $_POST['data_nasc'];
+//$data_nasc = $_POST['data_nasc'];
 $cpf = $_POST['cpf'];
 
 
-$sql = "INSERT INTO usuario (nome, email, data_nasc, cpf, senha) VALUES ('$nome', '$email', '$data_nasc', '$cpf', '$senha')";
+$sql = "INSERT INTO usuario (nome, email, /*data_nasc,*/ cpf, senha) VALUES ('$nome', '$email', /*'$data_nasc',*/ '$cpf', '$senha')";
 
 $resultado = mysqli_query($conexao, $sql);
 

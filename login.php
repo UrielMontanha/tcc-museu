@@ -7,13 +7,12 @@ $conexao = conectar();
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$_SESSION['usuario'] = $email;
-
 $sql = "SELECT * FROM usuario WHERE email='$email'";
 
 $resultado = executarSQL($conexao, $sql);
 
 $usuario = mysqli_fetch_assoc($resultado);
+$nome = $usuario["nome"];
 
 if ($usuario == null) {
     echo "<h3> Usuário não existe no sistema!
@@ -23,6 +22,7 @@ if ($usuario == null) {
 }
 
 if ($senha == $usuario['senha']) {
+    $_SESSION['usuario'] = $nome;
     header("Location: index.php");
 } else {
     echo "<h3> Senha inválida! Tente novamente. 
