@@ -13,7 +13,7 @@
 
 <body>
 
-    <?php
+<?php
     $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
     ?>
 
@@ -36,30 +36,7 @@
         </nav>
     </div>
 
-    <aside class="sidebar">
-
-        <header class="sidebar-header">
-            <img class="logo-img" src="css/imagens/ragnar.jpg" alt="Foto do Usuário">
-        </header>
-
-        <nav>
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> Home </i>
-                    <span>Home</span>
-                </span>
-            </button>
-
-            <button>
-                <span>
-                    <i class="material-symbols-outlined"> Tag </i>
-                    <span>Tag</span>
-                </span>
-
-            </button>
-        </nav>
-
-    </aside>
+    <?php include_once "sidebar.php"; ?>
 
 </body>
 

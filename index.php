@@ -16,13 +16,9 @@ session_start();
 </head>
 
 <body>
-
+  
   <?php include_once "header.php"; ?>
-
-  <ul id="slide-out" class="sidenav">
-      <li><a class="sidenav-close" href="#!">Clicking this will close Sidenav</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <?php include_once "sidebar.php";?>
 
   <br><br>
   <h4> OLá <?php echo $_SESSION['usuario']; ?> </h4>
@@ -32,6 +28,31 @@ session_start();
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
