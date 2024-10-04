@@ -19,12 +19,7 @@ session_start();
   
   <?php include_once "header.php"; ?>
   <?php include_once "sidebar.php";?>
-
-  <br><br>
-  <h4> OLá <?php echo $_SESSION['usuario']; ?> </h4>
-
-  <h6><a href="museu.php">Objetos dos museus</a></h6>
-
+  
 </body>
 
 </html>
