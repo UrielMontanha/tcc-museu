@@ -18,7 +18,7 @@
     ?>
 
     <div class="navbar-fixed">
-        <nav class="#212121 grey darken-4">
+        <nav class="#616161 grey darken-2">
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo"><img src="css/imagens/historia.png" height="55" width="60">MUSEU URUGUAIANA</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">

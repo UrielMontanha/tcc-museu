@@ -8,33 +8,67 @@
 </head>
 <body>
 
+<style>
+   .sidenav li a{
+    color: white;
+   }
+</style>
+
 <?php
 $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
 
 ?>
-<ul id="slide-out" class="sidenav #212121 grey darken-4 sidenav-fixed">
-
+<ul id="slide-out" class="sidenav #616161 grey darken-2 sidenav-fixed">
+<br><br><br><br>
   <li>
-    <div style="text-align: center; color: white;" class="title">
-      <h4>Menu</h4>
-    </div>
-  </li>
-
-  <li>
-    <h5> OLá <?php if (isset($_SESSION['usuario'])) {
-                echo $_SESSION['usuario'];
+    <h5> <?php if (isset($_SESSION['usuario'])) {
+                echo "OLá " . $_SESSION['usuario'];
               } ?> </h5>
   </li>
 
   <br>
 
+
   <div class="text-sidebar">
 
-  <li <?php if ($pagina_corrente == 'form-docencia.php') {
+  <li <?php if ($pagina_corrente == 'form_museus.php') {
         echo 'class="active"';
-      } ?>><a href="form-docencia.php">Docência </a></li>
+      } ?>><a href="form_museus.php">Museus </a></li>
 
-  <li <?php if ($pagina_corrente == 'form-producao.php') {
+  
+
+  <br><br><br>
+
+  <li><a href="logout.php">Sair</a></li>
+
+  </div>
+
+</ul>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li <?php if ($pagina_corrente == 'form-producao.php') {
         echo 'class="active"';
       } ?>><a href="form-producao.php"> Produção </a></li>
 
@@ -61,14 +95,3 @@ $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
   <li <?php if ($pagina_corrente == 'index.php') {
         echo 'class="active"';
       } ?>><a href="form-outros.php"> Outros </a></li>
-
-  <br><br><br>
-
-  <li><a href="logout.php">Sair</a></li>
-
-  </div>
-
-</ul>
-
-</body>
-</html>
