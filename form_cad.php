@@ -37,6 +37,10 @@ session_start();
                 <div class="register-link_cad">
                     <p>Já tem uma conta? <br><a href="form_login.php">Logar-se</a></p>
                 </div>
+
+                <div class="register-link_cad">
+                    <p><a href="index.php">Voltar a página inicial</a></p>
+                </div>
             </form>
         </div>
     </form>

@@ -22,6 +22,8 @@ $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
   <li>
     <h5> <?php if (isset($_SESSION['usuario'])) {
                 echo "OLá " . $_SESSION['usuario'];
+              } else {
+                echo "<p> Usuário anônimo</p>";
               } ?> </h5>
   </li>
 
@@ -38,9 +40,13 @@ $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
         echo 'class="active"';
       } ?>><a href="form_nos.php">Quem somos </a></li>
 
+<li <?php if ($pagina_corrente == 'form_contatos.php') {
+        echo 'class="active"';
+      } ?>><a href="form_contatos.php">Contatos </a></li>
+
   
 
-  <br><br><br>
+  <br><br><br><br>
 
   <li><a href="logout.php">Sair</a></li>
 

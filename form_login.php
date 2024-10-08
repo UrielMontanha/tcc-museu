@@ -30,6 +30,7 @@ session_start();
                     <p>Esqueceu senha? <a href="form_recuperar_senha.php"> Recupecar senha</a></p>
                     <br>
                     <p>Não tem conta? <a href="form_cad.php"> Cadastrar-se</a></p>
+                    <p><a href="form_cad.php"> Voltar a página inicial</a></p>
                 </div>
             </form>
         </div>
