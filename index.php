@@ -18,7 +18,6 @@ session_start();
 <body>
   
   <?php include_once "header.php"; ?>
-  <?php include_once "sidebar.php";?>
   
 </body>
 

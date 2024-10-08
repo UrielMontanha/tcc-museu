@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login </title>
     <link rel="stylesheet" href="css/style_sidebar1.css">
 </head>
 <body>
@@ -18,7 +17,7 @@
 $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
 
 ?>
-<ul id="slide-out" class="sidenav #616161 grey darken-2 sidenav-fixed">
+<ul id="slide-out" class="sidenav #424242 grey darken-3 sidenav-fixed">
 <br><br><br><br>
   <li>
     <h5> <?php if (isset($_SESSION['usuario'])) {
@@ -34,6 +33,10 @@ $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
   <li <?php if ($pagina_corrente == 'form_museus.php') {
         echo 'class="active"';
       } ?>><a href="form_museus.php">Museus </a></li>
+
+<li <?php if ($pagina_corrente == 'form_nos.php') {
+        echo 'class="active"';
+      } ?>><a href="form_nos.php">Quem somos </a></li>
 
   
 
