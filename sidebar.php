@@ -32,9 +32,9 @@ $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
 
   <div class="text-sidebar">
 
-  <li <?php if ($pagina_corrente == 'form_museus.php') {
+  <li <?php if ($pagina_corrente == 'form_museu.php') {
         echo 'class="active"';
-      } ?>><a href="form_museus.php">Museus </a></li>
+      } ?>><a href="form_museu.php">Museu </a></li>
 
 <li <?php if ($pagina_corrente == 'form_nos.php') {
         echo 'class="active"';
