@@ -16,9 +16,9 @@ session_start();
 </head>
 
 <body>
-  
+
   <?php include_once "header.php"; ?>
-  
+
 </body>
 
 </html>
@@ -81,7 +81,7 @@ session_start();
   </nav>
   -->
 
-  <!--
+<!--
   O Centro Cultural Dr. Pedro Marini é um importante ponto histórico e cultural em Uruguaiana, Rio Grande do Sul. Construído em 1913 por Domingo Francisco Rocco,
       o edifício serviu como quartel-general do Exército de 1930 a 19761. Localizado na Rua Santana, no centro da cidade, o prédio é um marco arquitetônico e cultural1.
 

@@ -13,7 +13,7 @@
 
 <body>
 
-<?php
+    <?php
     $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
     ?>
 
