@@ -24,6 +24,7 @@
             <br> <br>
             País: <input type="text" name="pais" placeholder="País de origem">
             <br> <br>
+            História: <br>
             <textarea name="historia" id="10" cols="30" rows="10" placeholder="História do objeto "></textarea>
 
             <br> <br> <br>
