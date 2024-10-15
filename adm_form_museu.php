@@ -1,40 +1,47 @@
+<?php
+session_start();
+
+require_once "conecta.php";
+$conexao = conectar();
+
+$sql = "SELECT * FROM objeto";
+
+$resultado = executarSQL($conexao, $sql);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Página museu adm</title>
 </head>
 
 <body>
-
-    <form action="adm_museu.php" method="post">
-
+    <form action="">
         <fieldset>
             <legend>
-                <h1>Museu</h1>
+                <h1>Página do administrador crud do museu</h1>
             </legend>
 
-            Nome do objeto: <input type="text" name="nome" placeholder="Nome do objeto">
-            <br> <br>
-            Data de criação: <input type="text" name="data" placeholder="Data de criação">
-            <br> <br>
-            Condição: <input type="text" name="condicao" placeholder="Condição do objeto">
-            <br> <br>
-            País: <input type="text" name="pais" placeholder="País de origem">
-            <br> <br>
-            História: <br>
-            <textarea name="historia" id="10" cols="30" rows="10" placeholder="História do objeto "></textarea>
+            <?php
+            while ($objeto = mysqli_fetch_assoc($resultado)) {
+                echo "<img src='css/imagens_obj/" . $objeto['foto'] . "'height='200px' width='250px'>";
+                echo $objeto['nome'];
+                echo " <a href='form_edit_obj.php?objeto_id="  .  $objeto['id_obj'] .  "'>Editar objeto</a>";
+            }
+            ?>
 
             <br> <br> <br>
 
-            <input type="submit">
+            <h3><a href="adm_form_cad_obj.php">Cadastrar objeto</a></h3>
 
         </fieldset>
-
     </form>
-
 </body>
 
 </html>
