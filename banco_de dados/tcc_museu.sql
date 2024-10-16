@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 26-Set-2024 às 18:49
--- Versão do servidor: 8.0.31
--- versão do PHP: 8.0.26
+-- Tempo de geração: 16-Out-2024 às 21:59
+-- Versão do servidor: 8.3.0
+-- versão do PHP: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,14 +65,23 @@ DROP TABLE IF EXISTS `objeto`;
 CREATE TABLE IF NOT EXISTS `objeto` (
   `id_obj` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
-  `data` datetime NOT NULL,
+  `data_criacao` date NOT NULL,
   `condicao` varchar(255) NOT NULL,
   `historia` text NOT NULL,
   `foto` varchar(255) NOT NULL,
   `pais_origem` varchar(255) NOT NULL,
   `cidade_origem` varchar(255) NOT NULL,
   PRIMARY KEY (`id_obj`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `objeto`
+--
+
+INSERT INTO `objeto` (`id_obj`, `nome`, `data_criacao`, `condicao`, `historia`, `foto`, `pais_origem`, `cidade_origem`) VALUES
+(1, 'homem aranha', '0000-00-00', 'quase boa', 'É um estudante do ensino médio órfão que vive com seu tio Ben e sua tia May. Parker foi mordido por uma aranha radioativa em uma exposição científica e adquire a agilidade de um aracnídeo. O estudante é capaz de andar nas paredes e tetos e desenvolve um aparelho que o permite lançar teias artificiais.', '66b5f9ac4ec33.jpg', 'EUA', ''),
+(2, 'Espada medieval', '0000-00-00', 'Mais ou menos', 'A espada era o instrumento bélico favorito na Idade Média (seguido pelo arco e pela lança). É uma arma de curto alcance e, pelos conceitos da época, bem perigosa. A espada era utilizada em grande escala nessa época, nas Guerras Santas, nas batalhas contra os mouros etc.', 'espada-viking-ulfberht.webp', 'Inglaterra', ''),
+(3, 'Machado viking', '0000-00-00', 'Boa', 'Vikings e europeus medievais usavam machados como armas e ferramentas. Os machados vikings eram tipicamente menores e mais versáteis do que seus equivalentes medievais, que eram maiores e usados principalmente para a guerra.', 'mach.jpg', 'Noruega', '');
 
 -- --------------------------------------------------------
 
