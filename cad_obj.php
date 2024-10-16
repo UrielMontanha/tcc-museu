@@ -5,14 +5,14 @@ require_once "conecta.php";
 $conexao = conectar();
 
 $nome = $_POST['nome'];
-$data = $_POST['data'];
+$data = $_POST['data_criacao'];
 $condicao = $_POST['condicao'];
 $pais_origem = $_POST['pais'];
 $historia = $_POST['historia'];
 $foto = $_POST['foto'];
 
 
-$sql = "INSERT INTO objeto (nome, data_chegada, condicao, pais_origem, historia, foto) VALUES ('$nome', $data, '$condicao', '$pais_origem', '$historia' ,'$foto')";
+$sql = "INSERT INTO objeto (nome, data_criacao, condicao, pais_origem, historia, foto) VALUES ('$nome', $data, '$condicao', '$pais_origem', '$historia' ,'$foto')";
 
 $resultado = mysqli_query($conexao, $sql);
 
@@ -26,5 +26,7 @@ if ($resultado === false) {
 }
 
 if ($resultado === true) {
-    echo "<h3>Objeto cadastrado com sucesso! <br> <br> <a href='adm_form_cad_obj.php'>Voltar</a><h3>";
+    echo "<h3>Objeto cadastrado com sucesso! <br> <br> 
+    <a href='adm_form_cad_obj.php'>Continuar cadastrando</a>
+    <br> <br> <a href='adm_form_museu.php'>Voltar</a><h3>";
 }

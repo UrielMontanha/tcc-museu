@@ -5,12 +5,7 @@ session_start();
 require_once "conecta.php";
 $conexao = conectar();
 
-/*$nome = $_POST['nome'];
-$data = $_POST['data'];
-$condicao = $_POST['condicao'];
-$pais_origem = $_POST['pais'];
-$historia = $_POST['historia'];
-$foto = $_POST['foto'];*/
+
 
 if ($_POST['nome'] != null) {
 

@@ -32,13 +32,16 @@ $resultado = executarSQL($conexao, $sql);
             while ($objeto = mysqli_fetch_assoc($resultado)) {
                 echo "<img src='css/imagens_obj/" . $objeto['foto'] . "'height='200px' width='250px'>";
                 echo $objeto['nome'];
-                echo " <a href='form_edit_obj.php?objeto_id="  .  $objeto['id_obj'] .  "'>Editar objeto</a>";
+                echo " <a href='form_edit_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Editar objeto</a>";
+                echo " <a href='deletar.php?objeto_id" . $objeto['id_obj'] . "'>Deletar:</a>";
             }
             ?>
 
             <br> <br> <br>
 
             <h3><a href="adm_form_cad_obj.php">Cadastrar objeto</a></h3>
+
+            <input type="text">
 
         </fieldset>
     </form>
