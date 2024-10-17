@@ -21,9 +21,9 @@ session_start();
                 <h1>Alterar objeto</h1>
             </legend>
 
-            <label>Nome: <input type="text" name="nome"></label><br><br>
+            <!-- <label>Nome: <input type="text" name="nome"></label><br><br>
 
-            <input type="submit">
+            <input type="submit"> -->
 
         </fieldset>
     </form>

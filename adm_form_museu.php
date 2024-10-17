@@ -33,7 +33,7 @@ $resultado = executarSQL($conexao, $sql);
                 echo "<img src='css/imagens_obj/" . $objeto['foto'] . "'height='200px' width='250px'>";
                 echo $objeto['nome'];
                 echo " <a href='form_edit_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Editar objeto</a>";
-                echo " <a href='deletar.php?objeto_id" . $objeto['id_obj'] . "'>Deletar:</a>";
+                echo " <a href='deletar.php?objeto_id=" . $objeto['id_obj'] . "'>Deletar:</a>";
             }
             ?>
 
@@ -41,7 +41,7 @@ $resultado = executarSQL($conexao, $sql);
 
             <h3><a href="adm_form_cad_obj.php">Cadastrar objeto</a></h3>
 
-            <input type="text">
+            <!-- <input type="text"> -->
 
         </fieldset>
     </form>

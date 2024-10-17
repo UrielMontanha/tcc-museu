@@ -7,7 +7,7 @@ $conexao = conectar();
 $nome = $_POST['nome'];
 $data = $_POST['data_criacao'];
 $condicao = $_POST['condicao'];
-$pais_origem = $_POST['pais'];
+$pais_origem = $_POST['pais_origem'];
 $historia = $_POST['historia'];
 $foto = $_POST['foto'];
 

@@ -29,7 +29,7 @@ session_start();
             <br> <br>
             Condição: <input type="text" name="condicao" placeholder="Condição do objeto">
             <br> <br>
-            País: <input type="text" name="pais" placeholder="País de origem">
+            País: <input type="text" name="pais_origem" placeholder="País de origem">
             <br> <br>
             História: <br>
             <textarea name="historia" id="10" cols="30" rows="10" placeholder="História do objeto"></textarea>
