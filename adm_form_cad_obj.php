@@ -25,7 +25,9 @@ session_start();
 
             Nome do objeto: <input type="text" name="nome" placeholder="Nome do objeto">
             <br> <br>
-            Data de criação: <input type="date" name="data_criacao" placeholder="Data de criação">
+            Data de criação: <input type="text" name="data_criacao" placeholder="Data de criação">
+            <br> <br>
+            Data de chegada: <input type="text" name="data_chegada" placeholder="Data de chegada">
             <br> <br>
             Condição: <input type="text" name="condicao" placeholder="Condição do objeto">
             <br> <br>
