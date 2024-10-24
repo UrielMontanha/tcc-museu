@@ -16,7 +16,7 @@ session_start();
 
 <body>
 
-    <form action="cad_obj.php" method="post">
+    <form action="cad_obj.php" enctype="multipart/form-data" method="post">
 
         <fieldset>
             <legend>
@@ -36,7 +36,7 @@ session_start();
             História: <br>
             <textarea name="historia" id="10" cols="30" rows="10" placeholder="História do objeto"></textarea>
             <br> <br> <br>
-            <input type="file" name="foto">
+            <input type="file" name="arquivo">
             <br> <br> <br>
 
             <input type="submit">
