@@ -1,75 +1,47 @@
 <?php
-
 session_start();
 
-require_once "conecta.php";
-$conexao = conectar();
+include_once "conecta.php";
+$conecta = conectar();
 
+$id_obj = $_POST['id_obj'];
 
+$nome = $_POST['nome'];
+$data_cri = $_POST['data_criacao'];
+$data_che = $_POST['data_chegada'];
+$condicao = $_POST['condicao'];
+$pais_origem = $_POST['pais_origem'];
+$historia = $_POST['historia'];
 
-if ($_POST['nome'] != null) 
-{
+$extensao = strtolower(pathinfo($_FILES['arquivo']['name'], PATHINFO_EXTENSION));
 
-    $novonome = $_POST['nome'];
+if (
+    $extensao != "png" && $extensao != "jpg" &&
+    $extensao != "jpeg" && $extensao != "gif" &&
+    $extensao != "jfif" && $extensao != "svg"
+) {
+    echo "O arquivo não é uma imagem! Apenas selecione arquivos 
+        com extensão png, jpg, jpeg, gif, jfif ou svg.";
+    die();
+}
 
-    $sql = "UPDATE objeto SET nome='$novonome' WHERE nome='$nome'";
-    
-    $resultado = mysqli_query($conexao, $sql);
-    
-    if (mysqli_errno($conexao) == 1062) {
-        echo "O nome deste objeto já existe. Tente outro nome";
-        die();
-    }
+if (getimagesize($_FILES['arquivo']['tmp_name']) === false) {
+    echo "Problemas ao enviar a imagem. Tente novamente.";
+    die();
 }
 
 
 
-if ($_POST['data'] != null) 
-{
-
-    $novadata = $_POST['data'];
-
-    $sql = "UPDATE objeto SET data_criacao='$novadata' WHERE data_criacao='$data'";
-    
-    $resultado = mysqli_query($conexao, $sql);
-    
-    if (mysqli_errno($conexao) == 1062) {
-        echo "G ";
-        die();
-    }
-}
+$nomeArquivo = uniqid();
+$pastaDestino = "/css/imagens_obj/";
 
 
 
-if ($_POST['condicao'] != null) 
-{
+$fezUpload = move_uploaded_file(
+    $_FILES['arquivo']['tmp_name'],
+    __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao
+);
 
-    $novacondicao = $_POST['condicao'];
+$sql = "UPDATE objeto (nome, data_criacao, data_chegada, condicao, pais_origem, historia, arquivo) VALUES ('$nome', $data_cri, $data_che, '$condicao', '$pais_origem', '$historia', '$nomeArquivo.$extensao') WHERE id_obj = '$id_obj'";
 
-    $sql = "UPDATE objeto SET condicao='$novcondicao' WHERE condicao='$condicao'";
-    
-    $resultado = mysqli_query($conexao, $sql);
-    
-    if (mysqli_errno($conexao) == 1062) {
-        echo "G";
-        die();
-    }
-}
-
-
-
-if ($_POST['pais_origem'] != null) 
-{
-
-    $novopais_origem = $_POST['pais_origem'];
-
-    $sql = "UPDATE objeto SET pais_origem='$novopaisorigem' WHERE pais_origem='$paisorigem'";
-    
-    $resultado = mysqli_query($conexao, $sql);
-    
-    if (mysqli_errno($conexao) == 1062) {
-        echo "G";
-        die();
-    }
-}
-
+$resultado = mysqli_query($conecta, $sql);

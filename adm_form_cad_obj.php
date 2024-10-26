@@ -11,7 +11,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar objeto</title>
+    <title>Cadastrar objeto</title> 
 </head>
 
 <body>
@@ -39,7 +39,7 @@ session_start();
             <input type="file" name="arquivo">
             <br> <br> <br>
 
-            <input type="submit">
+            <input type="submit" value='Cadastrar'>
 
         </fieldset>
 
