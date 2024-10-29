@@ -4,7 +4,7 @@ session_start();
 include_once "conecta.php";
 $conexao = conectar();
 
-$id_obj = filter_input(INPUT_GET, 'id_obj', FILTER_SANITIZE_NUMBER_INT);
+$id_obj = $_GET['objeto_id'];
 
 $sql = "SELECT * FROM objeto WHERE id_obj = '$id_obj'";
 
@@ -50,7 +50,7 @@ $objeto = mysqli_fetch_assoc($resultado);
             País: <input type="text" name="pais_origem" value="<?php echo $objeto['pais_origem']?>" placeholder="País de origem">
             <br> <br>
             História: <br>
-            <textarea name="historia" value="<?php echo $objeto['historia']?>" id="10" cols="30" rows="10" placeholder="História do objeto"></textarea>
+            <textarea name="historia" value="<?php echo $objeto['historia']?>" id="10" cols="30" rows="10" placeholder="História do objeto"><?php echo $objeto['historia']?></textarea>
             <br> <br> <br>
             <input type="file" name="arquivo">
             <br> <br> <br>

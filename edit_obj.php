@@ -31,17 +31,26 @@ if (getimagesize($_FILES['arquivo']['tmp_name']) === false) {
 }
 
 
-
 $nomeArquivo = uniqid();
 $pastaDestino = "/css/imagens_obj/";
 
-
+$ne = $nomeArquivo . "." . $extensao;
 
 $fezUpload = move_uploaded_file(
     $_FILES['arquivo']['tmp_name'],
-    __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao
+    __DIR__ . $pastaDestino . $ne
 );
 
-$sql = "UPDATE objeto (nome, data_criacao, data_chegada, condicao, pais_origem, historia, arquivo) VALUES ('$nome', $data_cri, $data_che, '$condicao', '$pais_origem', '$historia', '$nomeArquivo.$extensao') WHERE id_obj = '$id_obj'";
+$sql = "UPDATE objeto  
+    SET nome = '$nome', 
+    data_criacao = $data_cri, 
+    data_chegada = $data_che, 
+    condicao = '$condicao', 
+    pais_origem = '$pais_origem', 
+    historia = '$historia', 
+    arquivo = '$ne' 
+WHERE id_obj = $id_obj";
 
 $resultado = mysqli_query($conecta, $sql);
+
+header("location:adm_form_museu.php");
