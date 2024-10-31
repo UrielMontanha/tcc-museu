@@ -34,6 +34,10 @@
 
     <div class="text-sidebar">
 
+      <li <?php if ($pagina_Corrente == 'index.php') {
+            echo 'class="active"';
+          } ?>> <a href="index.php">Casa</a></li>
+
       <li <?php if ($pagina_corrente == 'form_museu.php') {
             echo 'class="active"';
           } ?>><a href="form_museu.php">Museu </a></li>

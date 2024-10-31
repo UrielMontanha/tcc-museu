@@ -1,6 +1,6 @@
 
   Fazer
 	- Fazer login com sessões -> status;
-	- Comando LIKE para a barra de pesquisa;
+	- Comando LIKE para a barra de pesquisa; Fazendo
 	- Arrumar a data com "explode";
 	- Tabelar objetos na página do administrador.

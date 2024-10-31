@@ -33,14 +33,15 @@ if (getimagesize($_FILES['arquivo']['tmp_name']) === false) {
 $nomeArquivo = uniqid();
 $pastaDestino = "/css/imagens_obj/";
 
-
+$ne = $nomeArquivo . "." . $extensao;
 
 $fezUpload = move_uploaded_file(
     $_FILES['arquivo']['tmp_name'],
-    __DIR__ . $pastaDestino . $nomeArquivo . "." . $extensao
+    __DIR__ . $pastaDestino . $ne
 );
 
-$sql = "INSERT INTO objeto (nome, data_criacao, data_chegada, condicao, pais_origem, historia, arquivo) VALUES ('$nome', $data_cri, $data_che, '$condicao', '$pais_origem', '$historia', '$nomeArquivo.$extensao')";
+$sql = "INSERT INTO objeto (nome, data_criacao, data_chegada, condicao, pais_origem, historia, arquivo) VALUES ('$nome', $data_cri, $data_che, '$condicao',
+'$pais_origem', '$historia', '$ne')";
 $resultado = mysqli_query($conexao, $sql);
 
 if ($resultado === false) {
