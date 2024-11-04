@@ -32,6 +32,7 @@
                         <li class="<?php if ($pagina_Corrente == 'quem_cad.php') {
                                         echo 'class="active"';
                                     } ?>"> <a href="form_cad.php">Cadastrar-se</a></li>
+                        
                         <form>
                             <div class="input-field" style="margin-left: 40vh;">
                                 <input id="search" type="search" required>
@@ -39,6 +40,7 @@
                                 <i class="material-icons"></i>
                             </div>
                         </form>
+                        
                     </ul>
 
                 </div>
