@@ -54,7 +54,7 @@
 
       <br><br><br><br>
 
-      <li><a href="logout.php">Sair</a></li>
+      <li><a href="sair.php">Sair</a></li>
 
     </div>
 

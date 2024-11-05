@@ -1,12 +1,16 @@
 <?php
 session_start();
+include("permadm.php");
 
 require_once "conecta.php";
 $conexao = conectar();
 
+
 $sql = "SELECT * FROM objeto";
 
 $resultado = executarSQL($conexao, $sql);
+
+
 
 ?>
 
