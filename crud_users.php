@@ -1,21 +1,3 @@
-<?php
-session_start();
-include("permadm.php");
-
-include_once "header.php";
-require_once "conecta.php";
-$conexao = conectar();
-
-
-$sql = "SELECT * FROM objeto";
-
-$resultado = executarSQL($conexao, $sql);
-
-
-?>
-
-
-
 <!DOCTYPE html>
 <html>
 
@@ -26,46 +8,48 @@ $resultado = executarSQL($conexao, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerenciamento de objetos</title>
+    <title>Gerenciamento de usuários</title>
 </head>
 
 <body>
+    <?php include_once("header.php") ?>
+    <?php include_once("conecta.php");
+    $conexao = conectar(); ?>
 
     <main class="container">
-        <h1>Objetos</h1>
+        <h1>Usuários</h1>
 
-        <a href="form_insere.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Cadastrar Objeto</a>
+        <a href="form_insere.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Inserir</a>
+
         <br> <br>
-        <a href="crud_users.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Gerenciar Usuários</a>
-
-        <br> <br> <br>
 
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>CPF</th>
                     <th>Nome</th>
-                    <th>foto</th>
+                    <th>Data de Nascimento</th>
                     <th>Operação</th>
                 </tr>
             </thead>
 
             <tbody>
-                <?php $sql = "SELECT * FROM objeto";
+                <?php $sql = "SELECT * FROM usuario";
                 $resultado = mysqli_query($conexao, $sql);
-                while ($linha = mysqli_fetch_assoc($resultado)) {  ?>
+                while ($linha = mysqli_fetch_assoc($resultado)) { ?>
                     <tr>
-                        <td> <?php echo $linha['id_obj'] ?> </td>
+                        <td> <?php echo $linha['id_usuario'] ?> </td>
+                        <td> <?php echo $linha['cpf'] ?> </td>
                         <td> <?php echo $linha['nome'] ?> </td>
-                        <td> <img src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
+                        <td> <?php $dataNasc = date('d/m/y', strtotime($linha['data_nasc']));
+                                echo $dataNasc; ?> </td>
+                        <td><a href="#modal<?php echo $linha['id_usuario']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
 
-                        <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
-
-
-                        <div id="modal<?php echo $linha['id_obj']; ?>" class="modal">
+                        <div id="modal<?php echo $linha['id_usuario']; ?>" class="modal">
                             <div class="modal-content">
                                 <h4>Atenção</h4>
-                                <p>Você tem certeza que deseja excluir este Objeto?
+                                <p>Você tem certeza que deseja excluir este usuário?
                                 <h6> <?php echo $linha['nome']; ?> </h6>
                                 </p>
                             </div>
@@ -73,7 +57,7 @@ $resultado = executarSQL($conexao, $sql);
                             <div class="modal-footer">
                                 <form action="excluir" method="POST">
 
-                                    <input type="hidden" name="id" value="<?php echo $linha['id_obj']; ?>">
+                                    <input type="hidden" name="id" value="<?php echo $linha['id_usuario']; ?>">
 
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
@@ -131,20 +115,3 @@ $resultado = executarSQL($conexao, $sql);
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-<!--
-        //while ($objeto = mysqli_fetch_assoc($resultado)) {
-        //    echo "<img src='css/imagens_obj/" . $objeto['arquivo'] . "'height='200px' width='250px'>";
-        //    echo $objeto['nome'];
-        //    echo " <a href='form_edit_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Editar objeto</a>";
-        //    echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Deletar:</a>";
-        //}
-        -->

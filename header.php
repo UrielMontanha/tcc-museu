@@ -34,5 +34,3 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
         </nav>
     </div>
 </header>
-
-<?php include_once "sidebar.php"; ?>
