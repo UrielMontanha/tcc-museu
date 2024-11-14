@@ -34,13 +34,13 @@ $resultado = executarSQL($conexao, $sql);
     <main class="container">
         <h1>Objetos</h1>
 
-        <a href="form_insere.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Cadastrar Objeto</a>
+        <a href="adm_form_cad_obj.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Cadastrar Objeto</a>
         <br> <br>
         <a href="crud_users.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Gerenciar Usuários</a>
 
         <br> <br> <br>
 
-        <table>
+        <table style="display: block;">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -57,7 +57,7 @@ $resultado = executarSQL($conexao, $sql);
                     <tr>
                         <td> <?php echo $linha['id_obj'] ?> </td>
                         <td> <?php echo $linha['nome'] ?> </td>
-                        <td> <img src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
+                        <td style="max-width: 400px;"> <img style="width:100%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
 
                         <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
 
