@@ -34,6 +34,8 @@ session_start();
                     <p>Não tem conta? <a href="form_cad.php"> Cadastrar-se</a></p>
                     <br>
                     <p><a href="index.php"> Voltar a página inicial</a></p>
+                    <br>
+                    <p><a href="form_recuperar_senha.php"> Esqueci minha senha</a></p>
                 </div>
             </form>
         </div>

@@ -40,12 +40,12 @@ $resultado = executarSQL($conexao, $sql);
 
         <br> <br> <br>
 
-        <table style="display: block;">
+        <table style="display: block; padding: 15px 80px;"> <!--O padding não está funcionando, por isso a tabela está estranha -->
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>foto</th>
+                    <th>foto</th> <!--No banco de dados o aquivo esta "date", mas não consigo trocar para "varchar"-->
                     <th>Operação</th>
                 </tr>
             </thead>
@@ -60,7 +60,8 @@ $resultado = executarSQL($conexao, $sql);
                         <td style="max-width: 400px;"> <img style="width:100%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
 
                         <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
-
+                        <td><a href='form_edit_obj.php?objeto_id=$objeto['id_obj']> class="btn-floating btn-medium waves-effect waves-light #0277bd light-blue darken-3 darken-4 modal-trigger"><i class="material-icons">edit</i></a> </td>
+                                                        <!--Como arrumar isto?👆👆-->
 
                         <div id="modal<?php echo $linha['id_obj']; ?>" class="modal">
                             <div class="modal-content">
@@ -71,14 +72,16 @@ $resultado = executarSQL($conexao, $sql);
                             </div>
 
                             <div class="modal-footer">
-                                <form action="excluir" method="POST">
+                                <form action="deletar_obj" method="POST">
 
                                     <input type="hidden" name="id" value="<?php echo $linha['id_obj']; ?>">
+
+                                    <!--echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'></a>";  Como arrumo  -->
 
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
 
-                                    <button type="submi" name="btn-deletar" class="modal-action modal-close  btn waves-light #00796b teal darken-2">
+                                    <button type="submit" name="btn-deletar" class="modal-action modal-close  btn waves-light #00796b teal darken-2">
                                         Confirmar </button>
 
                                 </form>
@@ -146,5 +149,8 @@ $resultado = executarSQL($conexao, $sql);
         //    echo $objeto['nome'];
         //    echo " <a href='form_edit_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Editar objeto</a>";
         //    echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Deletar:</a>";
+
+        echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'></a>";
+
         //}
         -->

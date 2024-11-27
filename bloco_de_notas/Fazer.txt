@@ -1,6 +1,6 @@
 
   Fazer
-	- Fazer login com sessões -> status;
-	- Comando LIKE para a barra de pesquisa; Fazendo
-	- Arrumar a data com "explode";
-	- Tabelar objetos na página do administrador.
+	- Fazer login com sessões -> status;             		Feito👮‍♂️
+	- Comando LIKE para a barra de pesquisa;         		Não consigo mexer com o materialize
+	- Arrumar a data com "explode";                  		Não sei como Fazer
+	- Tabelar objetos na página do administrador.    		Feito👮‍♂️

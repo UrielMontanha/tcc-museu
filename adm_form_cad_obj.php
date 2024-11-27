@@ -28,7 +28,7 @@ session_start();
 
         /* cor label focus  */
         .input-field input:focus+label {
-            color: black !important;
+            color: black !important
         }
 
         /* cor label underline focus  */
