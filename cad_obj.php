@@ -40,7 +40,7 @@ $fezUpload = move_uploaded_file(
     __DIR__ . $pastaDestino . $ne
 );
 
-$sql = "INSERT INTO objeto (nome, data_criacao, data_chegada, condicao, pais_origem, historia, arquivo) VALUES ('$nome', $data_cri, $data_che, '$condicao',
+$sql = "INSERT INTO objeto (nome, data_criacao, data_chegada, condicao, pais_origem, historia, arquivo) VALUES ('$nome', '$data_cri' , '$data_che', '$condicao',
 '$pais_origem', '$historia', '$ne')";
 $resultado = mysqli_query($conexao, $sql);
 

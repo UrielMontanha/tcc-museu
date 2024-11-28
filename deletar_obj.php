@@ -7,25 +7,11 @@ $conexao = conectar();
 $id = $_GET['id_obj'];
 
 // Usando Prepared Statements para evitar SQL Injection
-$sql = "DELETE FROM objeto WHERE id_obj = ?";
-$stmt = $conexao->prepare($sql);
+$sql = "DELETE FROM objeto WHERE id_obj = $id";
 
-// Bind do parâmetro para a consulta
-$stmt->bind_param("i", $id);
 
-// Executa a consulta
-$resultado = $stmt->execute();
-
-// Verifica se a exclusão foi bem-sucedida
-if ($resultado) {
-    // Redireciona para a página de administração se a operação for bem-sucedida
+$resultado = executarSQL($conexao, $sql);
     header('Location: adm_form_museu.php');
-    exit(); // Encerra a execução após o redirecionamento
-} else {
-    // Caso ocorra um erro na execução da query
-    echo "<h3>Erro ao excluir o objeto no banco<h3>";
-}
-
 ?>
 
 

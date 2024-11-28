@@ -141,7 +141,7 @@ session_start();
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="data_criacao" name="data_criacao" type="text" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
+                        <input id="data_criacao" name="data_criacao" type="date" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
                         <label for="data_criacao">Data de criação</label>
                         <span class="helper-text" data-error="A data precisa ser... XX/XX/XXXX"></span>
                     </div>
@@ -151,7 +151,7 @@ session_start();
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="data_chegada" name="data_chegada" type="text" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
+                        <input id="data_chegada" name="data_chegada" type="date" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
                         <label for="data_chegada">Data de chegada</label>
                         <span class="helper-text" data-error="A data precisa ser... XX/XX/XXXX"></span>
                     </div>

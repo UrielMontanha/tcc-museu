@@ -4,16 +4,16 @@ session_start();
 include_once "conecta.php";
 $conexao = conectar();
 
-$id_obj = $_GET['objeto_id'];
+$id_obj = $_GET['id_obj'];
 
-$sql = "SELECT * FROM objeto WHERE id_obj = '$id_obj'";
+$sql = "SELECT * FROM objeto WHERE id_obj = $id_obj";
 
-$resultado = mysqli_query($conexao, $sql);
+$resultado = executarSQL($conexao, $sql);
 
 
 $objeto = mysqli_fetch_assoc($resultado);
 
-
+$foto = $objeto['arquivo'];
 
 ?>
 
@@ -55,7 +55,8 @@ $objeto = mysqli_fetch_assoc($resultado);
         História: <br>
         <textarea name="historia" value="<?php echo $objeto['historia'] ?>" id="10" cols="30" rows="10" placeholder="História do objeto"><?php echo $objeto['historia'] ?></textarea>
         <br> <br> <br>
-        <input type="file" name="arquivo">
+        <input type="hidden" name="nome_arquivo" value="<?= $foto ?>">
+        <input type="file" value="<?=$objeto['arquivo'];?>" name="arquivo">
         <br> <br> <br>
 
         <input type="submit" value='Editar'>

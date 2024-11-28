@@ -60,8 +60,8 @@ $resultado = executarSQL($conexao, $sql);
                         <td style="max-width: 400px;"> <img style="width:100%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
 
                         <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
-                        <td><a href='form_edit_obj.php?objeto_id=$objeto['id_obj']> class="btn-floating btn-medium waves-effect waves-light #0277bd light-blue darken-3 darken-4 modal-trigger"><i class="material-icons">edit</i></a> </td>
-                                                        <!--Como arrumar isto?👆👆-->
+                        
+                        <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #0277bd light-blue darken-3 darken-4 modal-trigger"><i class="material-icons">edit</i></a> </td>
 
                         <div id="modal<?php echo $linha['id_obj']; ?>" class="modal">
                             <div class="modal-content">
@@ -72,9 +72,9 @@ $resultado = executarSQL($conexao, $sql);
                             </div>
 
                             <div class="modal-footer">
-                                <form action="deletar_obj" method="POST">
+                                <form action="deletar_obj" method="GET">
 
-                                    <input type="hidden" name="id" value="<?php echo $linha['id_obj']; ?>">
+                                    <input type="hidden" name="id_obj" value="<?php echo $linha['id_obj']; ?>">
 
                                     <!--echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'></a>";  Como arrumo  -->
 
