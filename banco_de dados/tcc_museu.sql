@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 31/10/2024 às 14:22
+-- Tempo de geração: 28/11/2024 às 18:21
 -- Versão do servidor: 8.3.0
 -- Versão do PHP: 8.2.18
 
@@ -69,18 +69,20 @@ CREATE TABLE IF NOT EXISTS `objeto` (
   `data_chegada` date NOT NULL,
   `condicao` varchar(255) NOT NULL,
   `historia` text NOT NULL,
-  `arquivo` date NOT NULL,
+  `arquivo` varchar(255) NOT NULL,
   `pais_origem` varchar(255) NOT NULL,
   `cidade_origem` varchar(255) NOT NULL,
   PRIMARY KEY (`id_obj`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `objeto`
 --
 
 INSERT INTO `objeto` (`id_obj`, `nome`, `data_criacao`, `data_chegada`, `condicao`, `historia`, `arquivo`, `pais_origem`, `cidade_origem`) VALUES
-(4, 'Spider', '0000-00-00', '0000-00-00', 'Boa', 'sssssss', '0000-00-00', 'EUA', '');
+(4, 'Spider-man', '0000-00-00', '0000-00-00', 'Boa', 'sssssss', '67489752ae4f6', 'EUA', ''),
+(7, 'sss', '0000-00-00', '0000-00-00', 'sss', 'sss', '67365634538eb.jpg', 'sss', ''),
+(9, 'ssss', '2013-08-08', '2024-10-30', 'sss', 'sss', '674889b5b39b0.jpg', 'sss', '');
 
 -- --------------------------------------------------------
 
@@ -93,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `data_nasc` datetime NOT NULL,
+  `data_nasc` date NOT NULL,
   `cpf` varchar(11) NOT NULL,
   `status` int NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -106,11 +108,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `senha`, `data_nasc`, `cpf`, `status`, `email`) VALUES
-(31, 'VERLEI', 'das', '2024-07-12 00:00:00', '00022233355', 0, 'uriel.2223@aluno.iffar.br'),
-(32, '', '', '0000-00-00 00:00:00', '', 0, ''),
-(34, 'Mundo Animal', 'dasdsadsadsadas', '2024-07-27 00:00:00', '00022233352', 0, 'uriel.2022316043@aluno.iffar.br'),
-(37, 'Uriel', '123', '2000-05-24 00:00:00', '77788899900', 0, 'uriel.2022316043@aluno.iffar.edu.br'),
-(38, 'Jonas', '22', '2000-05-24 00:00:00', '44433322211', 0, 'jonas.2022310916@aluno.iffar.edu.br');
+(34, 'Mundo Animal', 'ddd', '2024-07-27', '00022233352', 0, 'mundoanimal@gmail.com'),
+(37, 'Uriel', '123', '2000-05-24', '77788899900', 1, 'uriel@aluno'),
+(38, 'Jonas', '22', '2000-05-24', '44433322211', 0, 'jonas.2022310916@aluno.iffar.edu.br');
 
 -- --------------------------------------------------------
 
