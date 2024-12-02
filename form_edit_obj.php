@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("permadm.php");
 
 include_once "conecta.php";
 $conexao = conectar();
@@ -149,11 +150,11 @@ $foto = $objeto['arquivo'];
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Data de criação: <input type="text" name="data_criacao" value="<?php echo $objeto['data_criacao'] ?>" class="validate" placeholder="Data de criação">
+                Data de criação: <input type="date" name="data_criacao" value="<?php echo $objeto['data_criacao'] ?>" class="validate" placeholder="Data de criação">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Data de chegada: <input type="text" name="data_chegada" value="<?php echo $objeto['data_chegada'] ?>" class="validate" placeholder="Data de chegada">
+                Data de chegada: <input type="date" name="data_chegada" value="<?php echo $objeto['data_chegada'] ?>" class="validate" placeholder="Data de chegada">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
@@ -178,12 +179,12 @@ $foto = $objeto['arquivo'];
 
 
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="input-field col s12">
-                        <button class="btn waves-effect waves-light #0d47a1 blue darken-4" type="submit" name="action"><input type="file" value="<?= $objeto['arquivo']; ?>" name="arquivo"></button>
+                        <button class="btn waves-effect waves-light #0d47a1 blue darken-4" type="submit" name="action"><input type="file" value=" <? //= //$objeto['arquivo']; ?>" name="arquivo"></button>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
-                </div>
+                </div> -->
 
 
 

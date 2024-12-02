@@ -5,7 +5,7 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
 <header>
 
     <div class="navbar-fixed">
-        <nav class="#424242 grey darken-3">
+        <nav class="#424242 grey darken-4">
             <div class="nav-wrapper container">
 
 

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("permadm.php");
 
 ?>
 
@@ -18,6 +19,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
+        .text-a {
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
         /* tamanho da fonte */
         .input-field label {
             font-size: 16px !important;
@@ -131,7 +137,7 @@ session_start();
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="nome" name="nome" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ]+$" required>
+                        <input id="nome" name="nome" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ\s\-]+$" required>
                         <label for="nome">Nome do Objeto</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
@@ -161,7 +167,7 @@ session_start();
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="condicao" name="condicao" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ]+$" required>
+                        <input id="condicao" name="condicao" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ\s\-]+$" required>
                         <label for="condicao">Condição</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
@@ -171,7 +177,7 @@ session_start();
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="pais_origem" name="pais_origem" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ]+$" required>
+                        <input id="pais_origem" name="pais_origem" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ\s\-]+$" required>
                         <label for="pais_origem">País</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
@@ -182,18 +188,34 @@ session_start();
                 <div class="row">
                     <div class="input-field col s12">
                         <p>História</p>
-                        <textarea name="historia" id="10" cols="30" rows="10" placeholder="História do objeto"></textarea>
+                        <textarea class="text-a" name="historia" id="10" cols="30" rows="10" placeholder="História do objeto"></textarea>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
                 </div>
 
 
-                <div class="row">
+                <div class="input-field col s12">
+                    <!-- Label do botão de envio -->
+                    <div class="file-field input-field">
+                        <div class="btn waves-effect waves-light #0d47a1 blue darken-4">
+                            <span>Selecione um Arquivo</span>
+                            <!-- Input de Arquivo -->
+                            <input type="file" name="arquivo">
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Nenhum arquivo selecionado" readonly>
+                        </div>
+                    </div>
+                    <!-- Helper Text (mensagem de erro) -->
+                    <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
+                </div>
+
+                <!-- <div class="row">
                     <div class="input-field col s12">
                         <button class="btn waves-effect waves-light #0d47a1 blue darken-4" type="submit" name="action"><input type="file" name="arquivo"></button>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
-                </div>
+                </div> -->
 
 
 
@@ -220,7 +242,7 @@ session_start();
                         </p>
                     </div>
                 </div> -->
-            
+
 
 
         </form>

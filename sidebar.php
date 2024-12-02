@@ -19,7 +19,7 @@
   $pagina_corrente = basename($_SERVER['SCRIPT_NAME']);
 
   ?>
-  <ul id="slide-out" class="sidenav #424242 grey darken-3 sidenav-fixed">
+  <ul id="slide-out" class="sidenav #212121 grey darken-4 sidenav-fixed">
     <br><br><br><br>
     <li>
       <h5> <?php if (isset($_SESSION['usuario'])) {
@@ -80,34 +80,3 @@
 
 
 
-
-
-
-
-<li <?php if ($pagina_corrente == 'form-producao.php') {
-      echo 'class="active"';
-    } ?>><a href="form-producao.php"> Produção </a></li>
-
-<li <?php if ($pagina_corrente == 'index.php') {
-      echo 'class="active"';
-    } ?>><a href="form-eventos.php"> Eventos </a></li>
-
-<li <?php if ($pagina_corrente == 'index.php') {
-      echo 'class="active"';
-    } ?>><a href="form-orientacoes.php"> Orientações </a></li>
-
-<li <?php if ($pagina_corrente == 'index.php') {
-      echo 'class="active"';
-    } ?>><a href="form-palestras.php"> Palestras e Bancas </a></li>
-
-<li <?php if ($pagina_corrente == 'index.php') {
-      echo 'class="active"';
-    } ?>><a href="form-objetos.php"> Programas e Objetos </a></li>
-
-<li <?php if ($pagina_corrente == 'index.php') {
-      echo 'class="active"';
-    } ?>><a href="form-capacitacao.php"> Capacitação </a></li>
-
-<li <?php if ($pagina_corrente == 'index.php') {
-      echo 'class="active"';
-    } ?>><a href="form-outros.php"> Outros </a></li>
