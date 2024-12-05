@@ -16,6 +16,10 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
                         <li style="margin-left: 100vh;" class="<?php if ($pagina_Corrente == 'form_login.php') {
                                                                     echo 'class="active"';
                                                                 } ?>"> <a href="form_login.php">Login</a></li>
+                        <li class="<?php if ($pagina_Corrente == 'form_cad.php') {
+                                        echo 'class="active"';
+                                    } ?>"> <a href="form_cad.php">Cadastrar-se</a></li>
+                        
                         <li class="<?php if ($pagina_Corrente == 'quem_cad.php') {
                                         echo 'class="active"';
                                     } ?>"> <a href="form_cad.php">Cadastrar-se</a></li>

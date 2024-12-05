@@ -63,8 +63,14 @@ session_start();
               <span class="card-title"><?php echo $linha['nome']; ?></span>
             </div>
             <div class="card-content">
-              <p>Como limitar esta parte por número de letras?</p>
-            </div>
+              <?php 
+              
+              $texto = "Como limitar esta parte por número de letras?"; 
+              
+              echo "<p>".mb_strimwidth($texto, 0, 20, '+')."</p>";
+              
+              ?>
+              </div>
             <div class="card-action">
               <a href="form_obj.php?id_obj= <?= $linha['id_obj']; ?>">Visitar objeto</a>
             </div>
