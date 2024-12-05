@@ -27,6 +27,10 @@ session_start();
     .row {
       margin-top: 50px;
     }
+
+    main {
+      padding-top: 50px;
+    }
   </style>
 
 </head>
@@ -39,9 +43,14 @@ session_start();
 
   <main class="container">
 
+  <div class="row">
+            <div class="col s12">
+                <h2>Guerra</h2>
+                <p>A Segunda Guerra Mundial (1939-1945) é considerada o maior conflito militar do século XX. Marcada pela destruição sem precedentes na história da humanidade, o conflito mobilizou nações em todos os continentes, entre os quais estão Grã-Bretanha, Estados Unidos e União Soviética (os "Aliados"), combatendo a Alemanha, Itália e Japão (conhecido como "Eixo").</p>
+            </div>
+
     <div class="row">
       <?php
-      include_once "sidebar.php";
       include_once "conecta.php";
 
       $conexao = conectar();
@@ -63,14 +72,14 @@ session_start();
               <span class="card-title"><?php echo $linha['nome']; ?></span>
             </div>
             <div class="card-content">
-              <?php 
-              
-              $texto = "Como limitar esta parte por número de letras?"; 
-              
-              echo "<p>".mb_strimwidth($texto, 0, 20, '+')."</p>";
-              
+              <?php
+
+              $texto = "Como limitar esta parte por número de letras?";
+
+              echo "<p>" . mb_strimwidth($texto, 0, 20, '+') . "</p>";
+
               ?>
-              </div>
+            </div>
             <div class="card-action">
               <a href="form_obj.php?id_obj= <?= $linha['id_obj']; ?>">Visitar objeto</a>
             </div>

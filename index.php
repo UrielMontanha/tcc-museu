@@ -18,7 +18,42 @@ session_start();
 <body>
 
   <?php include_once "header.php"; ?>
-  <?php include_once "sidebar.php"; ?>
+
+
+  <!-- <footer class="footer fixed-footer #212121 grey darken-4">
+    <div class="container">
+      <div class="row">
+
+        <div class="col l4 s12">
+          <h5 class="white-text">Endereço</h5>
+          <p class="grey-text text-lighten-4">Europa</p>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="white-text">Exército</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Fale conosco</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Defender a pátria</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Capitão América</a></li>
+          </ul>
+        </div>
+        <div class="col l4 s12">
+          <h5 class="white-text">Redes Sociais</h5>
+          <ul>
+            <div class="col s12 m2 offset-m3 center-aling"><img class="responsive-img" width="50px" src="imagens/email.png"></div>
+            <div class="col s12 m2 center-aling"><img class="responsive-img" width="50px" src="imagens/whatsapp.png"></div>
+            <div class="col s12 m2 center-aling"><img class="responsive-img" width="50px" src="imagens/telephone.png"></div>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Tio Sam
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer> -->
 
 </body>
 
