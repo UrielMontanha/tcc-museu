@@ -2,12 +2,18 @@
 session_start();
 
 include_once "conecta.php";
-$conecta = conectar();
+$conexao = conectar();
 
-$sql = "SELECT * FROM objeto";
+$id_obj = $_GET['id_obj'];
+
+$sql = "SELECT * FROM objeto WHERE id_obj = $id_obj";
 
 $resultado = executarSQL($conexao, $sql);
 $resultado = mysqli_query($conexao, $sql);
+
+$objeto = mysqli_fetch_assoc($resultado);
+
+$id_obj = $_GET['id_obj'];
 
 ?>
 
@@ -30,8 +36,13 @@ $resultado = mysqli_query($conexao, $sql);
 </head>
 
 <body>
+
+    <?php include_once "header.php"; ?>
+
     <main class="container">
-        <!-- colocar o objeto -->
+
+        <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">
+
     </main>
 
 </body>

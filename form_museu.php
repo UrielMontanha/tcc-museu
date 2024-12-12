@@ -43,52 +43,52 @@ session_start();
 
   <main class="container">
 
-  <div class="row">
-            <div class="col s12">
-                <h2>Objetos do museu</h2>
-                <p>A Segunda Guerra Mundial (1939-1945) é considerada o maior conflito militar do século XX. Marcada pela destruição sem precedentes na história da humanidade, o conflito mobilizou nações em todos os continentes, entre os quais estão Grã-Bretanha, Estados Unidos e União Soviética (os "Aliados"), combatendo a Alemanha, Itália e Japão (conhecido como "Eixo").</p>
-            </div>
-
     <div class="row">
-      <?php
-      include_once "conecta.php";
+      <div class="col s12">
+        <h2>Objetos do museu</h2>
+        <p>Aqui é o local onde você poderá visitar os objetos do museu. Um espaço dedicado a preservar e compartilhar peças históricas, artísticas e culturais que contam histórias fascinantes e conectam gerações. Experiência enriquecedora e inspiradora ao explorar essas preciosidades!</p>
+      </div>
 
-      $conexao = conectar();
+      <div class="row">
+        <?php
+        include_once "conecta.php";
 
-
-      $sql = "SELECT * FROM objeto";
-
-      $resultado = executarSQL($conexao, $sql);
-
-
-      while ($linha = mysqli_fetch_assoc($resultado)) {
-      ?>
+        $conexao = conectar();
 
 
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="css/imagens_obj/<?php echo $linha['arquivo']; ?>" height="220px">
-              <span class="card-title"><?php echo $linha['nome']; ?></span>
-            </div>
-            <div class="card-content">
-              <?php
+        $sql = "SELECT * FROM objeto";
 
-              $texto = "Como limitar esta parte por número de letras?";
+        $resultado = executarSQL($conexao, $sql);
 
-              echo "<p>" . mb_strimwidth($texto, 0, 20, '+') . "</p>";
 
-              ?>
-            </div>
-            <div class="card-action">
-              <a href="form_obj.php?id_obj= <?= $linha['id_obj']; ?>">Visitar objeto</a>
+        while ($linha = mysqli_fetch_assoc($resultado)) {
+        ?>
+
+
+          <div class="col s12 m4">
+            <div class="card">
+              <div class="card-image">
+                <img src="css/imagens_obj/<?php echo $linha['arquivo']; ?>" height="220px">
+                <span class="card-title"><?php echo $linha['nome']; ?></span>
+              </div>
+              <div class="card-content">
+                <?php
+
+                $texto = $linha['historia'];
+
+                echo "<p>" . mb_strimwidth($texto, 0, 20, '+') . "</p>";
+
+                ?>
+              </div>
+              <div class="card-action">
+                <a href="form_obj.php?id_obj= <?= $linha['id_obj']; ?>">Conhecer objeto</a>
+              </div>
             </div>
           </div>
-        </div>
 
 
 
-      <?php } ?>
+        <?php } ?>
 
   </main>
 
