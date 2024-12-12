@@ -45,7 +45,7 @@ session_start();
 
   <div class="row">
             <div class="col s12">
-                <h2>Guerra</h2>
+                <h2>Objetos do museu</h2>
                 <p>A Segunda Guerra Mundial (1939-1945) é considerada o maior conflito militar do século XX. Marcada pela destruição sem precedentes na história da humanidade, o conflito mobilizou nações em todos os continentes, entre os quais estão Grã-Bretanha, Estados Unidos e União Soviética (os "Aliados"), combatendo a Alemanha, Itália e Japão (conhecido como "Eixo").</p>
             </div>
 
