@@ -9,12 +9,11 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Login </title>
-    <link rel="stylesheet" href="css/style_form_login.css">
+    <link rel="stylesheet" href="css/style_form_login.css?=nocache<?rand();?>">
 </head>
 <body>
     <form action="login.php" method="post">
         <div class="wrapper">
-            <form action="">
                 <h1>Login</h1>
                 <div class="input-box">
                     <input type="text" name="email" placeholder="Email" required>
@@ -38,7 +37,6 @@ session_start();
                     <br>
                     <p><a href="form_recuperar_senha.php"> Esqueci minha senha</a></p>
                 </div>
-            </form>
         </div>
     </form>
 </body>
