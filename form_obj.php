@@ -4,6 +4,15 @@ session_start();
 include_once "conecta.php";
 $conexao = conectar();
 
+// $sql_coment = "SELECT * FROM comentario WHERE id_com = $id_com";
+
+// $resultado_coment = executarSQL($conexao, $sql_coment);
+// $resultado_coment = mysqli_query($conexao, $sql_coment);
+                                                                                        //arrumar toda esta parte
+// $comentario = mysqli_fetch_assoc($resultado_coment);
+
+//dividindo comentário de objeto...
+
 $id_obj = $_GET['id_obj'];
 
 $sql = "SELECT * FROM objeto WHERE id_obj = $id_obj";
@@ -12,8 +21,6 @@ $resultado = executarSQL($conexao, $sql);
 $resultado = mysqli_query($conexao, $sql);
 
 $objeto = mysqli_fetch_assoc($resultado);
-
-$id_obj = $_GET['id_obj'];
 
 ?>
 
@@ -24,7 +31,7 @@ $id_obj = $_GET['id_obj'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Museu </title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="style_comments.css"> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +47,11 @@ $id_obj = $_GET['id_obj'];
             /* Mantém a proporção da imagem */
             display: block;
             /* Remove espaçamento indesejado */
+        }
+
+        .text-a {
+            border: 1px solid grey;
+            border-radius: 5px;
         }
     </style>
 
@@ -75,22 +87,34 @@ $id_obj = $_GET['id_obj'];
                 <p class="grey-text text-darken-3 lighten-3"> História do objeto: </p>
 
                 <h6 class="black-text text-darken-3 lighten-3" name="historia"> <?php echo $objeto['historia'] ?> </h6>
+                <div class="divider"> </div>
             </div>
 
 
 
             <div class="col s12">
-                <div class="comment-box">
+                <form action="comentario.php">
 
                     <h3>Área de comentários</h3>
 
-                    <form action="#">
-                        <textarea name="coment" placeholder="Comente aqui..."></textarea>
-                        <button type="submit">Enviar comentário</button>
-                    </form>
+                    <div class="row card-panel">
+                        <div class="input-field col s12">
+                            <p class="grey-text text-darken-3 lighten-3">Adicione um comentário:</p>
+                            <textarea class="text-a" name="comentario" placeholder="Comente aqui..."></textarea>
+                            <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
+                        </div>
 
-                </div>
+                        <div class="col s12">
+                            <p class="bott">
+                                <button class="btn waves-effect waves-light #0d47a1 blue darken-4 right" type="submit" name="action">Comentar
+                            </p>
+                        </div>
+                    </div>
+                </form>
             </div>
+
+            dd
+
         </div>
     </main>
 

@@ -76,7 +76,7 @@ session_start();
 
                 $texto = $linha['historia'];
 
-                echo "<p>" . mb_strimwidth($texto, 0, 20, '+') . "</p>";
+                echo "<p class='grey-text text-darken-3 lighten-3'>" . mb_strimwidth($texto, 0, 120, ' ...') . "</p>";
 
                 ?>
               </div>
