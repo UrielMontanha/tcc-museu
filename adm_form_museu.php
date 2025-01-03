@@ -34,9 +34,9 @@ $resultado = executarSQL($conexao, $sql);
     <main class="container">
         <h1>Objetos</h1>
 
-        <a href="adm_form_cad_obj.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Cadastrar Objeto</a>
+        <a href="crud_users.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">edit</i>Gerenciar Usuários</a>
         <br> <br>
-        <a href="crud_users.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Gerenciar Usuários</a>
+        <a href="adm_form_cad_obj.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Cadastrar Objeto</a>
 
         <br> <br> <br>
 
@@ -60,7 +60,7 @@ $resultado = executarSQL($conexao, $sql);
                         <td style="max-width: 400px;"> <img style="width:100%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
 
                         <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
-                        
+
                         <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #0277bd light-blue darken-3 darken-4 modal-trigger"><i class="material-icons">edit</i></a> </td>
 
                         <div id="modal<?php echo $linha['id_obj']; ?>" class="modal">
@@ -72,7 +72,7 @@ $resultado = executarSQL($conexao, $sql);
                             </div>
 
                             <div class="modal-footer">
-                                <form action="deletar_obj" method="GET">
+                                <form action="deletar_obj.php" method="GET">
 
                                     <input type="hidden" name="id_obj" value="<?php echo $linha['id_obj']; ?>">
 

@@ -19,7 +19,10 @@
     <main class="container">
         <h1>Usuários</h1>
 
-        <a href="form_insere.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Inserir</a>
+        <a href="form_cad_user.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Inserir</a>
+        <div class="col s2">
+            <p> <a href="adm_form_museu.php" class="btn waves-effect waves-light brown  lighten-3">Voltar</a> </p>
+        </div>
 
         <br> <br>
 
@@ -55,9 +58,9 @@
                             </div>
 
                             <div class="modal-footer">
-                                <form action="excluir" method="POST">
+                                <form action="deletar_user.php" method="GET">
 
-                                    <input type="hidden" name="id" value="<?php echo $linha['id_usuario']; ?>">
+                                    <input type="hidden" name="id_usuario" value="<?php echo $linha['id_usuario']; ?>">
 
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
