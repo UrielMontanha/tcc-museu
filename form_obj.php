@@ -8,7 +8,7 @@ $conexao = conectar();
 
 // $resultado_coment = executarSQL($conexao, $sql_coment);
 // $resultado_coment = mysqli_query($conexao, $sql_coment);
-                                                                                        //arrumar toda esta parte
+//arrumar toda esta parte
 // $comentario = mysqli_fetch_assoc($resultado_coment);
 
 //dividindo comentário de objeto...
@@ -87,15 +87,19 @@ $objeto = mysqli_fetch_assoc($resultado);
                 <p class="grey-text text-darken-3 lighten-3"> História do objeto: </p>
 
                 <h6 class="black-text text-darken-3 lighten-3" name="historia"> <?php echo $objeto['historia'] ?> </h6>
+
                 <div class="divider"> </div>
+
             </div>
 
 
 
             <div class="col s12">
-                <form action="comentario.php">
+                <form action="cad_comentario.php" method="post">
 
                     <h3>Área de comentários</h3>
+
+                    ff
 
                     <div class="row card-panel">
                         <div class="input-field col s12">
@@ -106,7 +110,7 @@ $objeto = mysqli_fetch_assoc($resultado);
 
                         <div class="col s12">
                             <p class="bott">
-                                <button class="btn waves-effect waves-light #0d47a1 blue darken-4 right" type="submit" name="action">Comentar
+                                <button class="btn waves-effect waves-light #0d47a1 blue darken-4 right" type="submit" name="comentario">Comentar
                             </p>
                         </div>
                     </div>

@@ -137,7 +137,7 @@ include("permadm.php");
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="nome" name="nome" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ\s\-]+$" required>
+                        <input id="nome" name="nome" type="text" class="validate" pattern="^[A-Za-z0-9\s'\\ -]+$" required>
                         <label for="nome">Nome do Objeto</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
