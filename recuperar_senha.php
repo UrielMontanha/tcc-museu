@@ -1,4 +1,4 @@
-<<?php
+<?php
 
     session_start();
 
@@ -10,7 +10,7 @@
     $conexao = conectar();
 
     $email = $_POST['email'];
-    $sql = "SELECT INTO usuario WHERE email = '$email'";
+    $sql = "SELECT * FROM usuario WHERE email = '$email'";
     $resultado = executarSQL($conexao, $sql);
 
     $usuario = mysqli_fetch_assoc($resultado);

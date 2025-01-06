@@ -6,6 +6,7 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
     <div class="navbar-fixed">
         <nav style="height: 100px;" class="grey darken-4">
             <div style="padding-top: 20px; padding-left: 0px; padding-right: 0px;" class="nav-wrapper container">
+            <a href="#" class="brand-logo">MUSEU MUNICIPAL</a>
                 <!-- <a href="#" class="brand-logo" height="50" width="10"> MUSEU MUNICIPAL </a> -->
 
                 <!-- Navbar items -->
