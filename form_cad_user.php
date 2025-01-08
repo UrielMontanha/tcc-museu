@@ -179,7 +179,7 @@ include("permadm.php");
                     <div class="input-field col s12">
                         <input id="status" name="status" type="number" class="validate" pattern="^[01]+$" required>
                         <label for="status">Status</label>
-                        <span class="helper-text" data-error="Você pode usar somente 0 (para usuários comuns) ou 1 (para administradores). Campo com preenchimento obrigatório."></span>
+                        <span class="helper-text" data-error="Você pode usar 0 (para usuários comuns) ou 1 (para administradores). Campo com preenchimento obrigatório."></span>
                     </div>
                 </div>
 
@@ -213,13 +213,13 @@ include("permadm.php");
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">
-                            <button class="btn waves-effect waves-light brown  lighten-3" type="submit" name="action">Cadastrar
+                            <button class="#0d47a1 blue darken-4 waves-effect waves-light btn" type="submit" name="action">Cadastrar
                         </p>
                     </div>
 
                     <div class="col s2">
                         <p class="center-align">
-                            <a href="adm_form_museu.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn">Voltar</a>
+                            <a href="adm_form_museu.php" class="btn waves-effect waves-light brown  lighten-3">Voltar</a>
                         </p>
                     </div>
                 </div>
