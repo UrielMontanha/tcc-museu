@@ -2,11 +2,12 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     font-family: sans-serif;
-    /*background-color: #121212;*/
-    /*color: #fff;*/
+    background: url('imagens/Constable_studyofclouds_7-28-1822.jpg') no-repeat;
+    background-size: 100% 100%; /* Define a largura e altura da imagem em porcentagem */
+    height: 100vh;
 }
 
 .border{
