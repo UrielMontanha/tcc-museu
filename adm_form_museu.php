@@ -44,7 +44,7 @@ $resultado = executarSQL($conexao, $sql);
 
         <a href="crud_users.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">edit</i>Gerenciar Usuários</a>
         <br> <br>
-        <a href="adm_form_cad_obj.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Cadastrar Objeto</a>
+        <a href="adm_form_cad_obj.php" class="btn waves-effect waves-light #fafafa grey lighten-5 black-text"><i class="material-icons right">add</i>Cadastrar Objeto</a>
 
         <br> <br> <br>
 

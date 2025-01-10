@@ -30,7 +30,7 @@ $objeto = mysqli_fetch_assoc($resultado);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Museu </title>
-    <!-- <link rel="stylesheet" href="style_comments.css"> -->
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,7 +49,7 @@ $objeto = mysqli_fetch_assoc($resultado);
         }
 
         .text-a {
-            border: 1px solid grey;
+            border: 1px solid white;
             border-radius: 5px;
         }
     </style>
@@ -60,7 +60,7 @@ $objeto = mysqli_fetch_assoc($resultado);
 
     <?php include_once "header.php"; ?>
 
-    <main class="container">
+    <main class="container wrapper">
 
         <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">
         <div class="row">
@@ -73,19 +73,19 @@ $objeto = mysqli_fetch_assoc($resultado);
 
 
             <div class="col s12">
-                <p class="grey-text text-darken-3 lighten-3" name="data_chegada"> Data de quando o objeto chegou no museu: <?php echo $objeto['data_chegada'] ?>. </p>
+                <p class="white-text" name="data_chegada"> Data de quando o objeto chegou no museu: <?php echo $objeto['data_chegada'] ?>. </p>
 
-                <p class="grey-text text-darken-3 lighten-3" name="data_criacao"> Data de quando o objeto foi criado: <?php echo $objeto['data_criacao'] ?>. </p>
+                <p class="white-text" name="data_criacao"> Data de quando o objeto foi criado: <?php echo $objeto['data_criacao'] ?>. </p>
 
-                <p class="grey-text text-darken-3 lighten-3" name="condicao"> Condição do objeto: <?php echo $objeto['condicao'] ?>. </p>
+                <p class="white-text" name="condicao"> Condição do objeto: <?php echo $objeto['condicao'] ?>. </p>
 
-                <p class="grey-text text-darken-3 lighten-3" name="pais_origem"> País origem do objeto: <?php echo $objeto['pais_origem'] ?>. </p>
+                <p class="white-text" name="pais_origem"> País origem do objeto: <?php echo $objeto['pais_origem'] ?>. </p>
 
-                <p class="grey-text text-darken-3 lighten-3" name="cidade_origem"> Cidade origem: <?php echo $objeto['cidade_origem'] ?>. </p>
+                <p class="white-text" name="cidade_origem"> Cidade origem: <?php echo $objeto['cidade_origem'] ?>. </p>
                 <br>
-                <p class="grey-text text-darken-3 lighten-3"> História do objeto: </p>
+                <p class="white-text"> História do objeto: </p>
 
-                <h6 class="black-text text-darken-3 lighten-3" name="historia"> <?php echo $objeto['historia'] ?> </h6>
+                <h6 class="white-text" name="historia"> <?php echo $objeto['historia'] ?> </h6>
 
                 <div class="divider"> </div>
 
@@ -96,27 +96,29 @@ $objeto = mysqli_fetch_assoc($resultado);
             <div class="col s12">
                 <form action="cad_comentario.php" method="post">
 
+                    <br><br><br>
+
                     <h3>Área de comentários</h3>
 
-                    ff
 
-                    <div class="row card-panel">
-                        <div class="input-field col s12">
-                            <p class="grey-text text-darken-3 lighten-3">Adicione um comentário:</p>
-                            <textarea class="text-a" name="comentario" placeholder="Comente aqui..."></textarea>
-                            <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
-                        </div>
-
-                        <div class="col s12">
-                            <p class="bott">
-                                <button class="btn waves-effect waves-light #0d47a1 blue darken-4 right" type="submit" name="comentario">Comentar
-                            </p>
-                        </div>
+                    <div class="input-field col s12">
+                        <p class="white-text">Adicione um comentário:</p>
+                        <textarea class="text-a" style="color: white;" name="comentario" placeholder="Comente aqui..."></textarea>
+                        <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
+
+                    <div class="col s12">
+                        <p class="bott">
+                            <button class="btn waves-effect waves-light #fafafa grey lighten-5 right black-text" type="submit" name="comentario">Comentar
+                        </p>
+                    </div>
+
+
+
                 </form>
             </div>
 
-            dd
+            <p>dd</p>
 
         </div>
     </main>
