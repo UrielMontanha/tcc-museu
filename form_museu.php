@@ -29,7 +29,7 @@ session_start();
     }
 
     main {
-      padding-top: 50px;
+      margin-top: 10%;
     }
   </style>
 
@@ -41,7 +41,7 @@ session_start();
   include_once "header.php";
   ?>
 
-  <main class="container">
+  <main class="container wrapper" style="margin-top: 5%;">
 
     <div class="row">
       <div class="col s12">
