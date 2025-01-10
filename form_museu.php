@@ -1,8 +1,3 @@
-<?php
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +43,11 @@ session_start();
         <h2>Objetos do museu</h2>
         <p>Aqui é o local onde você poderá visitar os objetos do museu. Um espaço dedicado a preservar e compartilhar peças históricas, artísticas e culturais que contam histórias fascinantes e conectam gerações. Experiência enriquecedora e inspiradora ao explorar essas preciosidades!</p>
         <div class="divider"> </div>
+
+        <br><br>
+
       </div>
+
 
 
 

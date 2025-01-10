@@ -51,5 +51,3 @@
     } else {
         header("Location: form_login.php");
     }
-
-    

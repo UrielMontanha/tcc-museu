@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("permadm.php");
 
 include_once "header.php";
