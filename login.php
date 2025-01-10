@@ -17,7 +17,6 @@
     $resultado = executarSQL($conexao, $sql);
 
     if(mysqli_num_rows($resultado) > 0){
-    
         $usuario = mysqli_fetch_assoc($resultado);
 
         //pega o nome

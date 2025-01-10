@@ -1,9 +1,8 @@
 <?php
-
-include("permadm.php");
-
 include_once "header.php";
 require_once "conecta.php";
+include("permadm.php");
+
 $conexao = conectar();
 
 
@@ -27,11 +26,20 @@ $resultado = executarSQL($conexao, $sql);
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciamento de objetos</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* #table{
+            margin-left: 30%;
+        } */
+
+    </style>
+
 </head>
 
 <body>
 
-    <main class="container">
+    <main class="container wrapper" style="width: 90%; margin-top: 5%;">
         <h1>Objetos</h1>
 
         <a href="crud_users.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">edit</i>Gerenciar Usuários</a>
@@ -40,7 +48,7 @@ $resultado = executarSQL($conexao, $sql);
 
         <br> <br> <br>
 
-        <table style="display: block; padding: 15px 80px;"> <!--O padding não está funcionando, por isso a tabela está estranha -->
+        <table class="bordered centered highlight responsive-table" id="table"> <!--style="display: block; padding: 15px 80px;"> O padding não está funcionando, por isso a tabela está estranha -->
             <thead>
                 <tr>
                     <th>ID</th>
