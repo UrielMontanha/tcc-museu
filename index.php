@@ -29,7 +29,7 @@
     </p>
 
     <div class="image-container">
-      <img src="css/imagens/1museu.jpg" alt="museu" class="img-fluid">
+      <img src="css/imagens/1museu.jpg" alt="museu" class="img-fluid responsive-img">
     </div>
 
     <p>
