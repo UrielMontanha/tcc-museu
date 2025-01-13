@@ -1,6 +1,5 @@
 <?php
-session_start();
-include("permadm.php");
+// include("permadm.php");
 
 include_once "conecta.php";
 $conexao = conectar();
@@ -31,6 +30,8 @@ $foto = $objeto['arquivo'];
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/styles.css">
 
     <style>
         /* tamanho da fonte */
@@ -137,6 +138,7 @@ $foto = $objeto['arquivo'];
     require_once "conecta.php";
     ?>
 
+    <!-- <main class="container wrapper"> -->
     <main class="container">
 
         <h1 class="center-align">Editar objetos</h1>
