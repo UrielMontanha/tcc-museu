@@ -84,7 +84,7 @@
                 ?>
               </div>
               <div class="card-action">
-                <a href="form_obj.php?id_obj= <?= $linha['id_obj']; ?>">Conhecer objeto</a>
+                <a href="form_obj.php?id_obj=<?= $linha['id_obj']; ?>">Conhecer objeto</a>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciamento de usuários</title>
@@ -16,7 +17,7 @@
     <?php include_once("conecta.php");
     $conexao = conectar(); ?>
 
-    <main class="container">
+    <main class="container wrappercont">
         <h1>Usuários</h1>
 
         <a href="form_cad_user.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Inserir</a>

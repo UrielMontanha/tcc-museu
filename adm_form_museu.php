@@ -39,21 +39,21 @@ $resultado = executarSQL($conexao, $sql);
 
 <body>
 
-    <main class="container wrapper" style="width: 90%; margin-top: 5%;">
+    <main class="container wrappercont">
         <h1>Objetos</h1>
 
-        <a href="crud_users.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">edit</i>Gerenciar Usuários</a>
+        <a href="crud_users.php" class="#fafafa grey lighten-5 black-text waves-effect waves-light btn"><i class="material-icons right">edit</i>Gerenciar Usuários</a>
         <br> <br>
         <a href="adm_form_cad_obj.php" class="btn waves-effect waves-light #fafafa grey lighten-5 black-text"><i class="material-icons right">add</i>Cadastrar Objeto</a>
 
         <br> <br> <br>
 
-        <table class="bordered centered highlight responsive-table" id="table"> <!--style="display: block; padding: 15px 80px;"> O padding não está funcionando, por isso a tabela está estranha -->
+        <table class="bordered centered highlight responsive-table white-text" id="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>foto</th> <!--No banco de dados o aquivo esta "date", mas não consigo trocar para "varchar"-->
+                    <th>foto</th>
                     <th>Operação</th>
                 </tr>
             </thead>
@@ -69,10 +69,10 @@ $resultado = executarSQL($conexao, $sql);
 
                         <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
 
-                        <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #0277bd light-blue darken-3 darken-4 modal-trigger"><i class="material-icons">edit</i></a> </td>
+                        <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #0d47a1 blue darken-4 modal-trigger"><i class="material-icons">edit</i></a> </td>
 
                         <div id="modal<?php echo $linha['id_obj']; ?>" class="modal">
-                            <div class="modal-content">
+                            <div class="modal-content black-text">
                                 <h4>Atenção</h4>
                                 <p>Você tem certeza que deseja excluir este Objeto?
                                 <h6> <?php echo $linha['nome']; ?> </h6>
@@ -83,8 +83,6 @@ $resultado = executarSQL($conexao, $sql);
                                 <form action="deletar_obj.php" method="GET">
 
                                     <input type="hidden" name="id_obj" value="<?php echo $linha['id_obj']; ?>">
-
-                                    <!--echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'></a>";  Como arrumo  -->
 
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
@@ -142,23 +140,3 @@ $resultado = executarSQL($conexao, $sql);
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-<!--
-        //while ($objeto = mysqli_fetch_assoc($resultado)) {
-        //    echo "<img src='css/imagens_obj/" . $objeto['arquivo'] . "'height='200px' width='250px'>";
-        //    echo $objeto['nome'];
-        //    echo " <a href='form_edit_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Editar objeto</a>";
-        //    echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'>Deletar:</a>";
-
-        echo " <a href='deletar_obj.php?objeto_id=" . $objeto['id_obj'] . "'></a>";
-
-        //}
-        -->

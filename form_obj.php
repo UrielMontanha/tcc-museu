@@ -1,5 +1,4 @@
 <?php
-
 include_once "conecta.php";
 $conexao = conectar();
 
@@ -7,7 +6,7 @@ $conexao = conectar();
 
 // $resultado_coment = executarSQL($conexao, $sql_coment);
 // $resultado_coment = mysqli_query($conexao, $sql_coment);
-//arrumar toda esta parte
+
 // $comentario = mysqli_fetch_assoc($resultado_coment);
 
 //dividindo comentário de objeto...
@@ -93,8 +92,12 @@ $objeto = mysqli_fetch_assoc($resultado);
 
 
 
+
             <div class="col s12">
                 <form action="cad_comentario.php" method="post">
+
+                <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']?>">
+                <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>" >
 
                     <br><br><br>
 
@@ -106,6 +109,8 @@ $objeto = mysqli_fetch_assoc($resultado);
                         <textarea class="text-a" style="color: white;" name="comentario" placeholder="Comente aqui..."></textarea>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
+
+
 
                     <div class="col s12">
                         <p class="bott">

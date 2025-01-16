@@ -9,7 +9,7 @@ if (!(isset($_SESSION["usuario"]))) {
     <header>
         <div class="navbar-fixed">
             <nav class="grey darken-4">
-                <div class="nav-wrapper container">
+                <div class="nav-wrapper">
 
                     <!-- Logo -->
                     <a href="#" class="brand-logo">MUSEU MUNICIPAL</a>
@@ -17,19 +17,15 @@ if (!(isset($_SESSION["usuario"]))) {
                     <!-- Menu para telas grandes -->
                     <ul class="right hide-on-med-and-down">
 
-                        <li class="<?php if ($pagina_Corrente == 'index.php') {
-                                        echo 'active';
-                                    } ?>">
+                        <li class="<?php if ($pagina_Corrente == 'index.php') { echo 'active'; } ?>">
                             <a href="index.php">Início</a>
                         </li>
 
-                        <li style="margin-right: 300px;" class="<?php if ($pagina_Corrente == 'form_museu.php') {
-                                                                    echo 'active';
-                                                                } ?>">
+                        <li style="margin-right: 300px;" class="<?php if ($pagina_Corrente == 'form_museu.php') { echo 'active'; } ?>">
                             <a href="form_museu.php">Visitar</a>
                         </li>
 
-                        <li class="right">
+                        <li>
 
                             <h5>
                                 <?php if (isset($_SESSION['usuario'])) {
@@ -41,9 +37,7 @@ if (!(isset($_SESSION["usuario"]))) {
 
                         </li>
 
-                        <li class="<?php if ($pagina_Corrente == 'form_login.php') {
-                                        echo 'active';
-                                    } ?>">
+                        <li class="right"<?php if ($pagina_Corrente == 'form_login.php') { echo 'active'; } ?>">
                             <a href="form_login.php">Login</a>
                         </li>
 
@@ -61,10 +55,6 @@ if (!(isset($_SESSION["usuario"]))) {
                             <a href="form_museu.php">Visitar</a>
                         </li>
 
-                        <li class="<?php if ($pagina_Corrente == 'form_login.php') { echo 'active'; } ?>">
-                            <a href="form_login.php">Login</a>
-                        </li>
-
                         <li>
                             <h5>
                                 <?php if (isset($_SESSION['usuario'])) {
@@ -73,6 +63,10 @@ if (!(isset($_SESSION["usuario"]))) {
                                     echo "Usuário anônimo";
                                 } ?>
                             </h5>
+                        </li>
+
+                        <li class="<?php if ($pagina_Corrente == 'form_login.php') { echo 'active'; } ?>">
+                            <a href="form_login.php">Login</a>
                         </li>
 
                     </ul>
@@ -118,7 +112,7 @@ if (!(isset($_SESSION["usuario"]))) {
                             <a href="form_museu.php">Visitar</a>
                         </li>
 
-                        <li style="margin-right: 200px;"> <!-- Como fazer para colocar o "Usuário" bem para a direita. -->
+                        <li style="margin-right: 200px;"> 
                             <h5>
                                 <?php if (isset($_SESSION['usuario'])) {
                                     echo "OLá " . $_SESSION['usuario'];
@@ -128,16 +122,10 @@ if (!(isset($_SESSION["usuario"]))) {
                             </h5>
                         </li>
 
-                        <!-- <div class="input-field">
-            <input id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-            <i class="material-icons">close</i>
-        </div>                                               O que há de errado?                  -->
-
-
-
                         <li><a href="sair.php">Sair</a></li>
                     </ul>
+
+
 
                     <!-- Mobile Navbar -->
                     <ul id="nav-mobile" class="sidenav">

@@ -1,9 +1,18 @@
 <?php
 session_start();
 
-require_once "conecta.php";
-$conexao = conectar();
 
-$comentario = $_POST['comentario'];
+if (!(isset($_SESSION["usuario"]))) {
+    header('location:form_login.php');
+} else {
+    require_once "conecta.php";
+    $conexao = conectar();
 
-$sql = "INSERT INTO comentarios (id_com, id_usuario, id_obj, comentario) VALUES ('$comentario')";
+    $id_obj = $_POST['id_obj'];
+    $id_usuario = $_POST['id_usuario'];
+    $comentario = $_POST['comentario'];
+
+    $sql = "INSERT INTO comentarios (id_usuario, id_obj, comentario) VALUES ($id_usuario, $id_obj,'$comentario')";
+
+    header('location:form_obj.php?id_obj=' . $id_obj);
+}

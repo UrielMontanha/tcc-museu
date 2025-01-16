@@ -26,6 +26,8 @@
         $_SESSION['usuario'] = $nome;
         $_SESSION['email'] = $email;
         $_SESSION['status'] = $usuario['status'];;
+        $_SESSION['id_usuario'] = $usuario['id_usuario'];
+        
 
         // if ($usuario == null) {
         //     // echo "<h3> Usuário não existe no sistema!
