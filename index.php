@@ -48,6 +48,10 @@
       There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
     </p>
 
+    <br>
+    
+    <a href="https://www.google.com.br/maps/@-29.7569684,-57.0864313,3a,75y,217.91h,102.6t/data=!3m7!1e1!3m5!1sEodfnbAmV2WFCLQ3-71kWw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-12.599228323589614%26panoid%3DEodfnbAmV2WFCLQ3-71kWw%26yaw%3D217.90709762929632!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI1MDExNC4wIKXMDSoASAFQAw%3D%3D" class="btn waves-effect waves-light #fafafa grey lighten-5 black-text"><i class="material-icons right">location_on</i>Local do museu</a>
+
   </div>
 
 

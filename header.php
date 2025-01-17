@@ -12,7 +12,7 @@ if (!(isset($_SESSION["usuario"]))) {
                 <div class="nav-wrapper">
 
                     <!-- Logo -->
-                    <a href="#" class="brand-logo">MUSEU MUNICIPAL</a>
+                    <a href="#" class="brand-logo"><img src="css/imagens/MUSEU_MUNICIPAL.png" alt="museu_municipal"></a>
 
                     <!-- Menu para telas grandes -->
                     <ul class="right hide-on-med-and-down">
@@ -37,12 +37,9 @@ if (!(isset($_SESSION["usuario"]))) {
 
                         </li>
 
-                        <li class="right"<?php if ($pagina_Corrente == 'form_login.php') { echo 'active'; } ?>">
+                        <li class="<?php if ($pagina_Corrente == 'form_login.php') { echo 'active'; } ?>">
                             <a href="form_login.php">Login</a>
                         </li>
-
-                        <li><a href="sair.php">Sair</a></li>
-                    </ul>
 
 
                     <!-- Menu mobile -->

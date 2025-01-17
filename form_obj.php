@@ -2,15 +2,6 @@
 include_once "conecta.php";
 $conexao = conectar();
 
-// $sql_coment = "SELECT * FROM comentario WHERE id_com = $id_com";
-
-// $resultado_coment = executarSQL($conexao, $sql_coment);
-// $resultado_coment = mysqli_query($conexao, $sql_coment);
-
-// $comentario = mysqli_fetch_assoc($resultado_coment);
-
-//dividindo comentário de objeto...
-
 $id_obj = $_GET['id_obj'];
 
 $sql = "SELECT * FROM objeto WHERE id_obj = $id_obj";
@@ -96,13 +87,19 @@ $objeto = mysqli_fetch_assoc($resultado);
             <div class="col s12">
                 <form action="cad_comentario.php" method="post">
 
-                <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario']?>">
                 <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>" >
 
                     <br><br><br>
 
                     <h3>Área de comentários</h3>
 
+                    <?php
+                if (!(isset($_SESSION['id_usuario']))){
+                    echo "<p>Você precisa estar logado para poder comentar.</p>";
+                } else {
+                    echo "";
+                }
+                ?>
 
                     <div class="input-field col s12">
                         <p class="white-text">Adicione um comentário:</p>
@@ -114,7 +111,7 @@ $objeto = mysqli_fetch_assoc($resultado);
 
                     <div class="col s12">
                         <p class="bott">
-                            <button class="btn waves-effect waves-light #fafafa grey lighten-5 right black-text" type="submit" name="comentario">Comentar
+                            <button class="btn waves-effect waves-light #fafafa grey lighten-5 right black-text" type="submit">Comentar</button>
                         </p>
                     </div>
 
@@ -123,7 +120,17 @@ $objeto = mysqli_fetch_assoc($resultado);
                 </form>
             </div>
 
-            <p>dd</p>
+                <?php
+                $sql_coment = "SELECT * FROM comentarios";
+
+                $resultado_coment = mysqli_query($conexao, $sql_coment);
+                while ($linha = mysqli_fetch_assoc($resultado_coment)) {
+                if ($id_obj == $linha['id_obj']){
+                    echo $linha['comentario'] . "<br>";
+                }
+
+            }
+                ?>
 
         </div>
     </main>
