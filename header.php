@@ -95,7 +95,7 @@ if (!(isset($_SESSION["usuario"]))) {
             <nav style="height: 100px;" class="grey darken-4">
                 <div style="padding-top: 20px; padding-left: 120px; padding-right: 0px;" class="nav-wrapper">
 
-                    <a href="#" class="brand-logo">MUSEU MUNICIPAL</a>
+                    <!-- <a href="#" class="brand-logo">MUSEU MUNICIPAL</a> -->
 
                     <ul class="right hide-on-med-and-down">
                         <li class="<?php if ($pagina_Corrente == 'index.php') {
