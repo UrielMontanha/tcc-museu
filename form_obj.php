@@ -52,6 +52,8 @@ $objeto = mysqli_fetch_assoc($resultado);
 
     <main class="container wrapper">
 
+        <!-- Aqui é onde podemos visualizar o objeto do museu -->
+
         <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">
         <div class="row">
 
@@ -77,7 +79,7 @@ $objeto = mysqli_fetch_assoc($resultado);
 
                 <h6 class="white-text" name="historia"> <?php echo $objeto['historia'] ?> </h6>
 
-                <div class="divider"> </div>
+                <div class="divider"> </div> <!-- Dividindo o objeto da parte de comentários -->
 
             </div>
 
@@ -87,19 +89,21 @@ $objeto = mysqli_fetch_assoc($resultado);
             <div class="col s12">
                 <form action="cad_comentario.php" method="post">
 
-                <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>" >
+                    <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">
 
                     <br><br><br>
 
                     <h3>Área de comentários</h3>
 
-                    <?php
-                if (!(isset($_SESSION['id_usuario']))){
-                    echo "<p>Você precisa estar logado para poder comentar.</p>";
-                } else {
-                    echo "";
-                }
-                ?>
+                    <?php //Verificando se a possoa está logada e pode comentar
+                    if (!(isset($_SESSION['id_usuario']))) {
+                        echo "<p>Você precisa estar logado para poder comentar.</p>";
+                    } else {
+                        echo "";
+                    }
+                    ?>
+
+                    <!-- Se estiver logada ela comenta -->
 
                     <div class="input-field col s12">
                         <p class="white-text">Adicione um comentário:</p>
@@ -120,17 +124,30 @@ $objeto = mysqli_fetch_assoc($resultado);
                 </form>
             </div>
 
-                <?php
-                $sql_coment = "SELECT * FROM comentarios";
+            <!-- Aqui, se o usuário estiver logado ele pode editar e excluir o seu comentário -->
 
-                $resultado_coment = mysqli_query($conexao, $sql_coment);
-                while ($linha = mysqli_fetch_assoc($resultado_coment)) {
-                if ($id_obj == $linha['id_obj']){
+            <?php
+            $sql_coment = "SELECT * FROM comentarios";
+
+            $resultado_coment = mysqli_query($conexao, $sql_coment);
+            while ($linha = mysqli_fetch_assoc($resultado_coment)) {
+
+                if ($id_obj == $linha['id_obj']) {
                     echo "<h6><b>" . $linha['nome'] . "</b> comentou:</h6>" . $linha['comentario'] . "<br><br>";
                 }
 
+                if (isset($_SESSION['id_usuario'])) {
+
+                    if ($_SESSION['id_usuario'] == $linha['id_usuario'])
+
+                        if ($id_obj == $linha['id_obj']) {
+
+                            echo '<a href="editar_com.php?id_usuario=' . $linha['id_usuario'] . '&id_com=' . $linha['id_com'] . '" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">edit</i></a> ';
+                            echo '<a href="excluir_com.php?id_usuario=' . $linha['id_usuario'] . '&id_com=' . $linha['id_com'] . '" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">delete</i></a> <br><br>';
+                        }
+                }
             }
-                ?>
+            ?>
 
         </div>
     </main>
