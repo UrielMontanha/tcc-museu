@@ -126,7 +126,7 @@ $objeto = mysqli_fetch_assoc($resultado);
                 $resultado_coment = mysqli_query($conexao, $sql_coment);
                 while ($linha = mysqli_fetch_assoc($resultado_coment)) {
                 if ($id_obj == $linha['id_obj']){
-                    echo $linha['comentario'] . "<br>";
+                    echo "<h6><b>" . $linha['nome'] . "</b> comentou:</h6>" . $linha['comentario'] . "<br><br>";
                 }
 
             }
