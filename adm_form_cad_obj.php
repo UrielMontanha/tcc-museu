@@ -1,6 +1,10 @@
 <?php
-include("permadm.php");
 
+//style="color: white;"                       Coloquei isto só para que depois seja melhor de trocar
+
+include_once "header.php";
+require_once "conecta.php";
+include("permadm.php");
 ?>
 
 
@@ -16,6 +20,8 @@ include("permadm.php");
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/styles.css">
 
     <style>
         .text-a {
@@ -122,22 +128,18 @@ include("permadm.php");
 </head>
 
 <body>
-    <?php
-    include_once "header.php";
-    require_once "conecta.php";
-    ?>
 
-    <main class="container">
+    <main class="container wrappercont" style="margin-top: 3%;">
 
         <h1 class="center-align"> Cadastrar objeto </h1>
         <form action="cad_obj.php" enctype="multipart/form-data" method="post">
 
-            <div class="card-panel">
+
 
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="nome" name="nome" type="text" class="validate" pattern="^[A-Za-z0-9\s'\\ -]+$" required>
-                        <label for="nome">Nome do Objeto</label>
+                        <label for="nome" style="color: white;">Nome do Objeto</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
                 </div>
@@ -146,8 +148,8 @@ include("permadm.php");
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="data_criacao" name="data_criacao" type="date" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
-                        <label for="data_criacao">Data de criação</label>
+                        <input id="data_criacao" name="data_criacao" type="date" style="color: white;" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
+                        <label for="data_criacao" style="color: white;">Data de criação</label>
                         <span class="helper-text" data-error="A data precisa ser... XX/XX/XXXX"></span>
                     </div>
                 </div>
@@ -156,8 +158,8 @@ include("permadm.php");
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="data_chegada" name="data_chegada" type="date" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
-                        <label for="data_chegada">Data de chegada</label>
+                        <input id="data_chegada" name="data_chegada" type="date" style="color: white;" class="validate" pattern="^\d{2}\/\d{2}\/\d{4}$" required>
+                        <label for="data_chegada" style="color: white;">Data de chegada</label>
                         <span class="helper-text" data-error="A data precisa ser... XX/XX/XXXX"></span>
                     </div>
                 </div>
@@ -167,7 +169,7 @@ include("permadm.php");
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="condicao" name="condicao" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ\s\-]+$" required>
-                        <label for="condicao">Condição</label>
+                        <label for="condicao" style="color: white;">Condição</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
                 </div>
@@ -177,7 +179,7 @@ include("permadm.php");
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="pais_origem" name="pais_origem" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ\s\-]+$" required>
-                        <label for="pais_origem">País</label>
+                        <label for="pais_origem" style="color: white;">País</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
                 </div>
@@ -187,7 +189,7 @@ include("permadm.php");
                 <div class="row">
                     <div class="input-field col s12">
                         <p>História</p>
-                        <textarea class="text-a" name="historia" id="10" cols="30" rows="10" placeholder="História do objeto"></textarea>
+                        <textarea class="text-a" name="historia" id="10" cols="30" rows="10" style="color: white;" placeholder="História do objeto"></textarea>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
                 </div>
@@ -196,7 +198,7 @@ include("permadm.php");
                 <div class="input-field col s12">
                     <!-- Label do botão de envio -->
                     <div class="file-field input-field">
-                        <div class="btn waves-effect waves-light #0d47a1 blue darken-4">
+                        <div class="btn waves-effect waves-light #fafafa grey lighten-5 black-text">
                             <span>Selecione um Arquivo</span>
                             <!-- Input de Arquivo -->
                             <input type="file" name="arquivo">
@@ -217,19 +219,13 @@ include("permadm.php");
                 </div> -->
 
 
-
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">
-                            <button class="#0d47a1 blue darken-4 waves-effect waves-light btn" type="submit" name="action">Cadastrar
+                            <a href="adm_form_museu.php" class="btn waves-effect waves-light #fafafa grey lighten-5 black-text left">Voltar</a>
+                            <button class="btn waves-effect waves-light #fafafa grey lighten-5 black-text right" type="submit" name="action">Cadastrar</button>
                         </p>
-                    </div>
-
-                    <div class="col s2">
-                        <p class="center-align">
-                            <a href="adm_form_museu.php" class="btn waves-effect waves-light brown  lighten-3">Voltar</a>
-                        </p>
-                    </div>
+                    
                 </div>
 
 

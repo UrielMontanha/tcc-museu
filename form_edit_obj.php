@@ -1,7 +1,8 @@
 <?php
-// include("permadm.php");
-
+include_once "header.php";
 include_once "conecta.php";
+include("permadm.php");
+
 $conexao = conectar();
 
 $id_obj = $_GET['id_obj'];
@@ -133,43 +134,38 @@ $foto = $objeto['arquivo'];
 </head>
 
 <body>
-    <?php
-    include_once "header.php";
-    require_once "conecta.php";
-    ?>
 
-    <!-- <main class="container wrapper"> -->
-    <main class="container">
+    <main class="container wrappercont" style="margin-top: 3%;">
 
         <h1 class="center-align">Editar objetos</h1>
         <form action="edit_obj.php" enctype="multipart/form-data" method="post">
 
-            <div class="card-panel">
+            <!-- <div class="card-panel"> -->
 
                 <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">
 
-                Nome do objeto: <?php $nome ?><input type="text" name="nome" value="<?php echo $objeto['nome']; ?>" class="validate" placeholder="Nome do objeto">
+                Nome do objeto: <?php $nome ?><input type="text" name="nome" style="color: white;" value="<?php echo $objeto['nome']; ?>" class="validate" placeholder="Nome do objeto">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Data de criação: <input type="date" name="data_criacao" value="<?php echo $objeto['data_criacao'] ?>" class="validate" placeholder="Data de criação">
+                Data de criação: <input type="date" name="data_criacao" style="color: white;" value="<?php echo $objeto['data_criacao'] ?>" class="validate" placeholder="Data de criação">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Data de chegada: <input type="date" name="data_chegada" value="<?php echo $objeto['data_chegada'] ?>" class="validate" placeholder="Data de chegada">
+                Data de chegada: <input type="date" name="data_chegada" style="color: white;" value="<?php echo $objeto['data_chegada'] ?>" class="validate" placeholder="Data de chegada">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Condição: <input type="text" name="condicao" value="<?php echo $objeto['condicao'] ?>" class="validate" placeholder="Condição do objeto">
+                Condição: <input type="text" name="condicao" style="color: white;" value="<?php echo $objeto['condicao'] ?>" class="validate" placeholder="Condição do objeto">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                País: <input type="text" name="pais_origem" value="<?php echo $objeto['pais_origem'] ?>" class="validate" placeholder="País de origem">
+                País: <input type="text" name="pais_origem" style="color: white;" value="<?php echo $objeto['pais_origem'] ?>" class="validate" placeholder="País de origem">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
                 História: <br>
-                <textarea name="historia" value="<?php echo $objeto['historia'] ?>" id="10" cols="30" rows="10" placeholder="História do objeto"><?php echo $objeto['historia'] ?></textarea>
+                <textarea name="historia" style="color: white;" value="<?php echo $objeto['historia'] ?>" id="10" cols="30" rows="10" placeholder="História do objeto"><?php echo $objeto['historia'] ?></textarea>
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br> <br>
 
@@ -194,7 +190,7 @@ $foto = $objeto['arquivo'];
                 <div class="input-field col s12">
                     <!-- Label do botão de envio -->
                     <div class="file-field input-field">
-                        <div class="btn waves-effect waves-light #0d47a1 blue darken-4">
+                        <div class="btn waves-effect waves-light #fafafa grey lighten-5 black-text">
                             <span>Selecione um Arquivo</span>
                             <!-- Input de Arquivo -->
                             <input type="file" name="arquivo" value="<?= $objeto['arquivo']; ?>">
@@ -209,25 +205,20 @@ $foto = $objeto['arquivo'];
 
 
 
-
+<br><br>
 
 
 
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">
-                            <button class="btn waves-effect waves-light brown  lighten-3" type="submit" name="action">Editar
-                        </p>
-                    </div>
-
-                    <div class="col s2">
-                        <p class="center-align">
-                            <a href="adm_form_museu.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn">Voltar</a>
+                            <a href="adm_form_museu.php" class="btn waves-effect waves-light #fafafa grey lighten-5 black-text left">Voltar</a>
+                            <button class="btn waves-effect waves-light #fafafa grey lighten-5 black-text right" type="submit" name="action">Editar</button>
                         </p>
                     </div>
                 </div>
 
-            </div>
+            <!-- </div> -->
 
         </form>
 

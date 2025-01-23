@@ -1,6 +1,7 @@
 <?php
 
 include_once "conecta.php";
+$conexao = conectar();
 
 $sql_coment = "SELECT * FROM comentarios";
 

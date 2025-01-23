@@ -2,7 +2,7 @@
 include_once "header.php";
 require_once "conecta.php";
 include("permadm.php");
-
+// die;
 $conexao = conectar();
 
 
@@ -28,18 +28,11 @@ $resultado = executarSQL($conexao, $sql);
     <title>Gerenciamento de objetos</title>
     <link rel="stylesheet" href="css/styles.css">
 
-    <style>
-        /* #table{
-            margin-left: 30%;
-        } */
-
-    </style>
-
 </head>
 
 <body>
 
-    <main class="container wrappercont">
+    <main class="container wrappercont" style="margin-top: 5%;">
         <h1>Objetos</h1>
 
         <a href="crud_users.php" class="#fafafa grey lighten-5 black-text waves-effect waves-light btn"><i class="material-icons right">edit</i>Gerenciar Usuários</a>
@@ -67,9 +60,9 @@ $resultado = executarSQL($conexao, $sql);
                         <td> <?php echo $linha['nome'] ?> </td>
                         <td style="max-width: 400px;"> <img style="width:100%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
 
-                        <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
+                        <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">edit</i></a> </td>
 
-                        <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #0d47a1 blue darken-4 modal-trigger"><i class="material-icons">edit</i></a> </td>
+                        <td><a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">delete</i></a> </td>
 
                         <div id="modal<?php echo $linha['id_obj']; ?>" class="modal">
                             <div class="modal-content black-text">
