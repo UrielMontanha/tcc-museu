@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 17/01/2025 às 12:36
+-- Tempo de geração: 23-Jan-2025 às 01:53
 -- Versão do servidor: 8.3.0
--- Versão do PHP: 8.2.18
+-- versão do PHP: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacoes`
+-- Estrutura da tabela `avaliacoes`
 --
 
 DROP TABLE IF EXISTS `avaliacoes`;
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `avaliacoes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `comentarios`
+-- Estrutura da tabela `comentarios`
 --
 
 DROP TABLE IF EXISTS `comentarios`;
@@ -54,10 +54,10 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   PRIMARY KEY (`id_com`),
   KEY `fk_c_id_usuario` (`id_usuario`),
   KEY `fk_c_id_obj` (`id_obj`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `comentarios`
+-- Extraindo dados da tabela `comentarios`
 --
 
 INSERT INTO `comentarios` (`id_com`, `id_usuario`, `id_obj`, `comentario`, `nome`) VALUES
@@ -65,12 +65,14 @@ INSERT INTO `comentarios` (`id_com`, `id_usuario`, `id_obj`, `comentario`, `nome
 (2, 39, 16, 'g it over 2000 years old. R', 'Uriel'),
 (3, 34, 16, 'sfdvgsfg', 'Mundo Animal'),
 (4, 34, 12, 'sadsd', 'Mundo Animal'),
-(5, 34, 12, 'amendoim', 'Mundo Animal');
+(5, 34, 12, 'amendoim', 'Mundo Animal'),
+(6, 40, 15, 'Mundo animal', 'Aldeído'),
+(7, 34, 15, 'Eae rapa!', 'Mundo Animal');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objeto`
+-- Estrutura da tabela `objeto`
 --
 
 DROP TABLE IF EXISTS `objeto`;
@@ -88,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `objeto` (
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `objeto`
+-- Extraindo dados da tabela `objeto`
 --
 
 INSERT INTO `objeto` (`id_obj`, `nome`, `data_criacao`, `data_chegada`, `condicao`, `historia`, `arquivo`, `pais_origem`, `cidade_origem`) VALUES
@@ -101,7 +103,7 @@ INSERT INTO `objeto` (`id_obj`, `nome`, `data_criacao`, `data_chegada`, `condica
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `recuperar_senha`
+-- Estrutura da tabela `recuperar_senha`
 --
 
 DROP TABLE IF EXISTS `recuperar_senha`;
@@ -113,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `recuperar_senha` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `recuperar_senha`
+-- Extraindo dados da tabela `recuperar_senha`
 --
 
 INSERT INTO `recuperar_senha` (`email`, `token`, `data_criacao`, `usado`) VALUES
@@ -123,7 +125,7 @@ INSERT INTO `recuperar_senha` (`email`, `token`, `data_criacao`, `usado`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 DROP TABLE IF EXISTS `usuario`;
@@ -138,21 +140,22 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `senha`, `data_nasc`, `cpf`, `status`, `foto_perfil`, `email`) VALUES
 (34, 'Mundo Animal', 'ddd', '2024-07-27', '00022233352', 0, '', 'mundoanimal@gmail.com'),
 (37, 'admnistrador', '123', '2000-05-24', '77788899900', 1, '', 'adm@gmail.com'),
-(39, 'Uriel', '123', '0000-00-00', '05767293023', 0, '', 'uriel.2022316043@aluno.iffar.edu.br');
+(39, 'Uriel', '123', '0000-00-00', '05767293023', 0, '', 'uriel.2022316043@aluno.iffar.edu.br'),
+(40, 'Aldeído', '123', '0000-00-00', '99988877766', 0, '', 'aldeido@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `visita`
+-- Estrutura da tabela `visita`
 --
 
 DROP TABLE IF EXISTS `visita`;
@@ -165,18 +168,18 @@ CREATE TABLE IF NOT EXISTS `visita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `avaliacoes`
+-- Limitadores para a tabela `avaliacoes`
 --
 ALTER TABLE `avaliacoes`
   ADD CONSTRAINT `fk_id_obj` FOREIGN KEY (`id_obj`) REFERENCES `objeto` (`id_obj`),
   ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
 
 --
--- Restrições para tabelas `comentarios`
+-- Limitadores para a tabela `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `fk_c_id_obj` FOREIGN KEY (`id_obj`) REFERENCES `objeto` (`id_obj`),
