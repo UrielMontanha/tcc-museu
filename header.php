@@ -3,6 +3,31 @@ session_start();
 
 $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Esse verifica se não há nenhuma sessão inicial
 if (!(isset($_SESSION["usuario"]))) {
 
 ?>

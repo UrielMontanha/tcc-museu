@@ -17,6 +17,7 @@ $objeto = mysqli_fetch_assoc($resultado);
 <html lang="en">
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Museu </title>
@@ -142,7 +143,7 @@ $objeto = mysqli_fetch_assoc($resultado);
 
                         if ($id_obj == $linha['id_obj']) {
 
-                            echo '<a href="editar_com.php?id_usuario=' . $linha['id_usuario'] . '&id_com=' . $linha['id_com'] . '" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">edit</i></a> ';
+                             ?> <a href="#!" onclick="abrirModal('<?php echo $linha['id_com']; ?>')" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">edit</i></a> <?php
                             echo '<a href="excluir_com.php?id_usuario=' . $linha['id_usuario'] . '&id_com=' . $linha['id_com'] . '" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">delete</i></a> <br><br>';
                         }
                 }
@@ -151,6 +152,51 @@ $objeto = mysqli_fetch_assoc($resultado);
 
         </div>
     </main>
+
+
+    <!-- modal editar comentário -->
+    <div id="textareaModal" class="modal">
+        <form action="editar_com.php" method="post">
+            <div class="modal-content">
+                <h5>Editar Tópico</h5>
+                <input type="hidden" id="editar-id" name="id_topico">
+                <input type="hidden" value="<?php echo  $_SESSION['id_usuario']; ?>" name="id_usuarios">
+                <input type="hidden" value="<?php echo  $linha['id_obj']; ?>" name="id_obj">
+                <textarea id="editar-comentario" class="materialize-textarea" placeholder="Edite o comentário aqui" name="texto" required style="font-size: 40px;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close btn-flat #b71c1c red darken-4 ">Fechar</a>
+                <button type="submit" class="btn ">Salvar</button>
+            </div>
+        </form>
+    </div>
+
+
+<script>
+    function abrirModal() {
+            var modal = document.getElementById('textareaModal');
+            var instance = M.Modal.init(modal);
+            instance.open();
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            M.Modal.init(elems);
+        }); // abre o modal
+
+        
+        function openEditModal(id) {
+            // Preencher os campos do modal com os dados do tópico
+            document.getElementById('comentario_com').value = id;
+            //document.getElementById('editar-top').value = text;
+            document.getElementById('editar-comentario').value = document.getElementById('texto-edit-' + id).value;
+
+            // Abrir o modal
+            var modal = document.getElementById('textareaEdit');
+            var instance = M.Modal.init(modal);
+            instance.open();
+        }
+</script>
+
 
 </body>
 
