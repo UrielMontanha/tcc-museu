@@ -41,7 +41,7 @@ $resultado = executarSQL($conexao, $sql);
 
         <br> <br> <br>
 
-        <table class="bordered centered highlight responsive-table white-text" id="table">
+        <table class="bordered centered  responsive-table white-text" id="table">
             <thead>
                 <tr>
                     <th>ID</th>
