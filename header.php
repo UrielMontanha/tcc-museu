@@ -16,9 +16,9 @@ if (!(isset($_SESSION["usuario"]))) {
                 <div class="nav-wrapper">
 
                     <!-- Logo -->
-                    <!-- <a href="#" class="brand-logo">
+                    <a href="#" class="brand-logo">
                         <img class="responsive-img" src="css/imagens/MUSEU_MUNICIPAL.png" alt="museu_municipal">
-                    </a> -->
+                    </a>
 
                     <!-- Menu para telas grandes -->
                     <ul class="right hide-on-med-and-down">
