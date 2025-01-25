@@ -43,6 +43,15 @@ $objeto = mysqli_fetch_assoc($resultado);
             border: 1px solid white;
             border-radius: 5px;
         }
+
+        .textarea-custom {
+            font-size: 18px;
+            color: black    ;
+        }
+
+        .btn-floating {
+            margin-right: 10px;
+        }
     </style>
 
 </head>
@@ -108,7 +117,7 @@ $objeto = mysqli_fetch_assoc($resultado);
 
                     <div class="input-field col s12">
                         <p class="white-text">Adicione um comentário:</p>
-                        <textarea class="text-a" style="color: white;" name="comentario" placeholder="Comente aqui..."></textarea>
+                        <textarea class="text-a white-text" name="comentario" placeholder="Comente aqui..."></textarea>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>
 
@@ -135,20 +144,25 @@ $objeto = mysqli_fetch_assoc($resultado);
 
                 if ($id_obj == $linha['id_obj']) {
                     echo "<h6><b>" . $linha['nome'] . "</b> comentou:</h6>" . $linha['comentario'] . "<br><br>";
-                }
+                
 
-                if (isset($_SESSION['id_usuario'])) {
-
-                    if ($_SESSION['id_usuario'] == $linha['id_usuario'])
-
-                        if ($id_obj == $linha['id_obj']) {
-
-                             ?> <a href="#!" onclick="abrirModal('<?php echo $linha['id_com']; ?>')" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">edit</i></a> <?php
-                            echo '<a href="excluir_com.php?id_usuario=' . $linha['id_usuario'] . '&id_com=' . $linha['id_com'] . '" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">delete</i></a> <br><br>';
-                        }
+                    if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $linha['id_usuario']) {
+                        ?>
+                        <a href="#!" 
+                            onclick="openEditModal('<?php echo $linha['id_com']; ?>', '<?php echo addslashes($linha['comentario']); ?>')" 
+                            class="btn-floating btn-medium waves-effect waves-light grey lighten-5 modal-trigger">
+                            <i class="material-icons black-text">edit</i>
+                        </a>
+                        <a href="excluir_com.php?id_usuario=<?php echo $linha['id_usuario']; ?>&id_com=<?php echo $linha['id_com']; ?>" 
+                            class="btn-floating btn-medium waves-effect waves-light grey lighten-5">
+                            <i class="material-icons black-text">delete</i>
+                        </a>
+                        <br><br>
+                        <?php
                 }
             }
-            ?>
+        }
+        ?>
 
         </div>
     </main>
@@ -156,12 +170,76 @@ $objeto = mysqli_fetch_assoc($resultado);
 
     <!-- modal editar comentário -->
     <div id="textareaModal" class="modal">
+    <form action="editar_com.php" method="post">
+        <div class="modal-content">
+            <h5>Editar Comentário</h5>
+            <input type="hidden" id="editar-id" name="id_com">
+            <textarea id="editar-comentario" class="materialize-textarea textarea-custom" name="texto" required></textarea>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-close btn-flat red darken-4 white-text">Fechar</a>
+            <button type="submit" class="btn">Salvar</button>
+        </div>
+    </form>
+</div>
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            M.Modal.init(elems);
+        }); // abre o modal
+        
+            function openEditModal(id, comentario) {
+                // Preencher os campos do modal
+                document.getElementById('editar-id').value = id;
+                document.getElementById('editar-comentario').value = comentario;
+
+                // Abrir o modal
+                var modal = document.getElementById('textareaModal');
+                var instance = M.Modal.getInstance(modal);
+                instance.open();
+            }
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+<div id="textareaModal" class="modal">
+    <form action="editar_com.php" method="post">
+        <div class="modal-content">
+            <h5>Editar Comentário</h5>
+            <input type="hidden" id="editar-id" name="id_com">
+            <textarea id="editar-comentario" class="materialize-textarea textarea-custom" name="texto" required></textarea>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-close btn-flat red darken-4">Fechar</a>
+            <button type="submit" class="btn">Salvar</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+<!-- <div id="textareaModal" class="modal">
         <form action="editar_com.php" method="post">
             <div class="modal-content">
-                <h5>Editar Tópico</h5>
-                <input type="hidden" id="editar-id" name="id_topico">
-                <input type="hidden" value="<?php echo  $_SESSION['id_usuario']; ?>" name="id_usuarios">
-                <input type="hidden" value="<?php echo  $linha['id_obj']; ?>" name="id_obj">
+                <h5>Editar Comentário</h5>
+                <input type="hidden" id="editar-id" name="id_com">
+                <input type="hidden" value="<?php //echo  $_SESSION['id_usuario']; ?>" name="id_usuarios">
+                <input type="hidden" value="<?php //echo  $linha['id_obj']; ?>" name="id_obj">
                 <textarea id="editar-comentario" class="materialize-textarea" placeholder="Edite o comentário aqui" name="texto" required style="font-size: 40px;"></textarea>
             </div>
             <div class="modal-footer">
@@ -169,35 +247,37 @@ $objeto = mysqli_fetch_assoc($resultado);
                 <button type="submit" class="btn ">Salvar</button>
             </div>
         </form>
-    </div>
+    </div> -->
 
 
-<script>
-    function abrirModal() {
-            var modal = document.getElementById('textareaModal');
-            var instance = M.Modal.init(modal);
-            instance.open();
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.modal');
-            M.Modal.init(elems);
-        }); // abre o modal
-
-        
-        function openEditModal(id) {
-            // Preencher os campos do modal com os dados do tópico
-            document.getElementById('comentario_com').value = id;
-            //document.getElementById('editar-top').value = text;
-            document.getElementById('editar-comentario').value = document.getElementById('texto-edit-' + id).value;
-
-            // Abrir o modal
-            var modal = document.getElementById('textareaEdit');
-            var instance = M.Modal.init(modal);
-            instance.open();
-        }
-</script>
 
 
-</body>
 
-</html>
+
+
+
+<!-- <?php
+            // $sql_coment = "SELECT * FROM comentarios";
+
+            // $resultado_coment = mysqli_query($conexao, $sql_coment);
+            // while ($linha = mysqli_fetch_assoc($resultado_coment)) {
+
+            //     if ($id_obj == $linha['id_obj']) {
+            //         echo "<h6><b>" . $linha['nome'] . "</b> comentou:</h6>" . $linha['comentario'] . "<br><br>";
+            //     }
+
+            //     if (isset($_SESSION['id_usuario'])) {
+
+            //         if ($_SESSION['id_usuario'] == $linha['id_usuario'])
+
+            //             if ($id_obj == $linha['id_obj']) {
+
+                             ?> <a href="#!" onclick="abrirModal('<?// echo $linha['id_com']; ?>')" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">edit</i></a> <?php
+                            //echo '<a href="excluir_com.php?id_usuario=' . $linha['id_usuario'] . '&id_com=' . $linha['id_com'] . '" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">delete</i></a> <br><br>';
+                        //}
+                //}
+            //}
+            ?>
+
+        </div>
+    </main> -->
