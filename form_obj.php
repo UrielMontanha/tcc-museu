@@ -99,7 +99,7 @@ $objeto = mysqli_fetch_assoc($resultado);
             <div class="col s12">
                 <form action="cad_comentario.php" method="post">
 
-                    <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">
+                    <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">                    
 
                     <br><br><br>
 
@@ -165,6 +165,15 @@ $objeto = mysqli_fetch_assoc($resultado);
         ?>
 
         </div>
+
+        <br><br>
+
+        <div class="col s12">
+            <p class="bott">
+                <button class="btn waves-effect waves-light red darken-4" type="submit"><a class="white-text" href="form_museu.php">Ver mais objetos</a></button>
+            </p>
+        </div>
+
     </main>
 
 
@@ -178,7 +187,7 @@ $objeto = mysqli_fetch_assoc($resultado);
         </div>
         <div class="modal-footer">
             <a href="#" class="modal-close btn-flat red darken-4 white-text">Fechar</a>
-            <button type="submit" class="btn">Salvar</button>
+            <button type="submit" class="btn #01579b light-blue darken-4">Salvar</button>
         </div>
     </form>
 </div>
@@ -206,78 +215,3 @@ $objeto = mysqli_fetch_assoc($resultado);
 </body>
 
 </html>
-
-
-
-
-
-
-
-<div id="textareaModal" class="modal">
-    <form action="editar_com.php" method="post">
-        <div class="modal-content">
-            <h5>Editar Comentário</h5>
-            <input type="hidden" id="editar-id" name="id_com">
-            <textarea id="editar-comentario" class="materialize-textarea textarea-custom" name="texto" required></textarea>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="modal-close btn-flat red darken-4">Fechar</a>
-            <button type="submit" class="btn">Salvar</button>
-        </div>
-    </form>
-</div>
-
-
-
-
-
-
-
-<!-- <div id="textareaModal" class="modal">
-        <form action="editar_com.php" method="post">
-            <div class="modal-content">
-                <h5>Editar Comentário</h5>
-                <input type="hidden" id="editar-id" name="id_com">
-                <input type="hidden" value="<?php //echo  $_SESSION['id_usuario']; ?>" name="id_usuarios">
-                <input type="hidden" value="<?php //echo  $linha['id_obj']; ?>" name="id_obj">
-                <textarea id="editar-comentario" class="materialize-textarea" placeholder="Edite o comentário aqui" name="texto" required style="font-size: 40px;"></textarea>
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="modal-close btn-flat #b71c1c red darken-4 ">Fechar</a>
-                <button type="submit" class="btn ">Salvar</button>
-            </div>
-        </form>
-    </div> -->
-
-
-
-
-
-
-
-
-<!-- <?php
-            // $sql_coment = "SELECT * FROM comentarios";
-
-            // $resultado_coment = mysqli_query($conexao, $sql_coment);
-            // while ($linha = mysqli_fetch_assoc($resultado_coment)) {
-
-            //     if ($id_obj == $linha['id_obj']) {
-            //         echo "<h6><b>" . $linha['nome'] . "</b> comentou:</h6>" . $linha['comentario'] . "<br><br>";
-            //     }
-
-            //     if (isset($_SESSION['id_usuario'])) {
-
-            //         if ($_SESSION['id_usuario'] == $linha['id_usuario'])
-
-            //             if ($id_obj == $linha['id_obj']) {
-
-                             ?> <a href="#!" onclick="abrirModal('<?// echo $linha['id_com']; ?>')" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">edit</i></a> <?php
-                            //echo '<a href="excluir_com.php?id_usuario=' . $linha['id_usuario'] . '&id_com=' . $linha['id_com'] . '" class="btn-floating btn-medium waves-effect waves-light #fafafa grey lighten-5 modal-trigger"><i class="material-icons" style="color: black;">delete</i></a> <br><br>';
-                        //}
-                //}
-            //}
-            ?>
-
-        </div>
-    </main> -->
