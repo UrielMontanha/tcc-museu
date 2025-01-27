@@ -61,7 +61,7 @@
 
         $a = $_GET['pesquisar'];
 
-        $sql = "SELECT * FROM objeto WHERE nome LIKE '%$a%' or historia LIKE '%$a%' or data_criacao LIKE '%$a%' ";
+        $sql = "SELECT * FROM objeto WHERE nome LIKE '%$a%' or historia LIKE '%$a%' or data_criacao LIKE '%$a%' or condicao LIKE '%$a%' or pais_origem LIKE '%$a%' ";
 
       }else{
 

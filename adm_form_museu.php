@@ -71,7 +71,7 @@ $resultado = executarSQL($conexao, $sql);
                             </div>
 
                             <div class="modal-footer">
-                                <form action="deletar_obj.php" method="GET">
+                                <form action="deletar_obj.php" method="POST">
 
                                     <input type="hidden" name="id_obj" value="<?php echo $linha['id_obj']; ?>">
 
