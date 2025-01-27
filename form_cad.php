@@ -5,14 +5,33 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Cadastrar </title>
     <link rel="stylesheet" href="css/style_form_cad.css">
+
+    <script>
+        function aplicarMascaraCPF() {
+            // Seleciona o campo de entrada do CPF usando o id="cpf"
+            const cpfField = document.getElementById('cpf');
+
+            // Adiciona um ouvinte de evento 'input' para que a máscara seja aplicada a cada novo caractere digitado
+            cpfField.addEventListener('input', function() {
+                // Chama a função 'mascaraCPF' para aplicar a máscara no valor digitado
+                this.value = mascaraCPF(this.value);
+            });
+        }
+
+        // Chama a função assim que a página for carregada
+        window.onload = aplicarMascaraCPF;
+    </script>
+
 </head>
+
 <body>
-<form action="cadastrar.php" method="post">
+    <form action="cadastrar.php" method="post">
         <div class="wrapper_cad">
             <form action="">
                 <h1>Cadastrar</h1>
@@ -30,7 +49,7 @@ session_start();
                     <input type="data" name="data_nasc" placeholder="Data de nascimento" required>
                 </div>-->
                 <div class="input-box_cad">
-                    <input type="text" name="cpf" placeholder="CPF" required>
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF" required>
                 </div>
 
                 <button type="submit" class="btn_cad">Cadastrar-se</button>
@@ -46,4 +65,5 @@ session_start();
         </div>
     </form>
 </body>
+
 </html>

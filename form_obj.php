@@ -166,13 +166,13 @@ $objeto = mysqli_fetch_assoc($resultado);
 
         </div>
 
-        <br><br>
-
         <div class="col s12">
             <p class="bott">
-                <button class="btn waves-effect waves-light red darken-4" type="submit"><a class="white-text" href="form_museu.php">Ver mais objetos</a></button>
+                <button class="btn waves-effect waves-light #fafafa grey lighten-5 left" type="submit"><a class="black-text" href="form_museu.php">Ver mais objetos</a></button>
             </p>
         </div>
+
+        <br><br>
 
     </main>
 

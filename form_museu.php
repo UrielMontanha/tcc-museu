@@ -46,15 +46,28 @@
 <br>
       <nav>
         <div class="nav-wrapper #fafafa grey lighten-5">
-          <form>
+          <form method="get">
             <div class="input-field">
-              <input id="search" type="search" placeholder="Pesquise alguma informação específica aqui..." required>
+              <input name="pesquisar" id="search" type="search" placeholder="Pesquise por informações mais específicas aqui...">
               <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
               <i class="material-icons">close</i>
             </div>
           </form>
         </div>
       </nav>
+
+      <?php
+      if(isset($_GET['pesquisar'])){
+
+        $a = $_GET['pesquisar'];
+
+        $sql = "SELECT * FROM objeto WHERE nome LIKE '%$a%' or historia LIKE '%$a%' or data_criacao LIKE '%$a%' ";
+
+      }else{
+
+        $sql = "SELECT * FROM objeto";
+      }
+      ?>
 
         <br><br>
 
@@ -68,9 +81,6 @@
         include_once "conecta.php";
 
         $conexao = conectar();
-
-
-        $sql = "SELECT * FROM objeto";
 
         $resultado = executarSQL($conexao, $sql);
 

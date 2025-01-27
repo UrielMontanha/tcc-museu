@@ -23,13 +23,13 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
                         <a href="index.php">Início</a>
                     </li>
 
-                    <li class="<?php if ($pagina_Corrente == 'form_museu.php') {
+                    <li style="margin-right: 80px;" class="<?php if ($pagina_Corrente == 'form_museu.php') {
                                                                 echo 'active';
                                                             } ?>">
                         <a href="form_museu.php">Visitar</a>
                     </li>
 
-                    <?php if (isset($_SESSION['status']) == 1) { ?>
+                    <?php if (isset($_SESSION['status']) && $_SESSION['status'] == 1) { ?>
                         <li class="<?php if ($pagina_Corrente == 'adm_form_museu.php') {
                                         echo 'active';
                                     } ?>">
@@ -37,8 +37,8 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
                         </li>
                     <?php }  ?>
 
-                    <?php if (isset($_SESSION['status']) == 1) { ?>
-                        <li style="margin-right: 300px;" class="<?php if ($pagina_Corrente == 'crud_users.php') {
+                    <?php if (isset($_SESSION['status']) && $_SESSION['status'] == 1) { ?>
+                        <li style="margin-right: 80px;" class="<?php if ($pagina_Corrente == 'crud_users.php') {
                                         echo 'active';
                                     } ?>">
                             <a href="crud_users.php">Gerenciar usuários</a>
@@ -50,11 +50,12 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
 
                         <h5>
                             <?php
-                            $logado = 'Usuário';
                             if (isset($_SESSION['usuario'])) {
                                 $logado = $_SESSION['usuario'];
+                                echo "<p style='margin-right: 30px;'>Você está logado " . $logado . "</p>";
+                            } else {
+                                echo "<p style='margin-right: 80px;'>Usuário anônimo</p>";
                             }
-                            echo "Olá " . $logado;
                             ?>
                         </h5>
 
