@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-// Capturar o nome do arquivo atual para destacar os links ativos
 $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
-
-// Obter as informações da sessão (se existirem)
-$usuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
-$status = isset($_SESSION['status']) ? $_SESSION['status'] : null;
 ?>
 
 <header>
@@ -21,112 +16,119 @@ $status = isset($_SESSION['status']) ? $_SESSION['status'] : null;
 
                 <!-- Menu para telas grandes -->
                 <ul class="right hide-on-med-and-down">
-                    <li class="<?php echo $pagina_Corrente == 'index.php' ? 'active' : ''; ?>">
+
+                    <li class="<?php if ($pagina_Corrente == 'index.php') {
+                                    echo 'active';
+                                } ?>">
                         <a href="index.php">Início</a>
                     </li>
 
-                    <li class="<?php echo $pagina_Corrente == 'form_museu.php' ? 'active' : ''; ?>">
+                    <li class="<?php if ($pagina_Corrente == 'form_museu.php') {
+                                                                echo 'active';
+                                                            } ?>">
                         <a href="form_museu.php">Visitar</a>
                     </li>
 
-                    <?php if (!$usuario): ?>
-                        <!-- Usuário não logado -->
-                        <li>
-                            <span class="white-text">Usuário anônimo</span>
+                    <?php if (isset($_SESSION['status']) == 1) { ?>
+                        <li class="<?php if ($pagina_Corrente == 'adm_form_museu.php') {
+                                        echo 'active';
+                                    } ?>">
+                            <a href="adm_form_museu.php">Gerenciar objetos</a>
                         </li>
+                    <?php }  ?>
 
-                        <li class="<?php echo $pagina_Corrente == 'form_login.php' ? 'active' : ''; ?>">
-                            <a href="form_login.php">Login</a>
-                        </li>
-
-                    <?php elseif ($status === 0): ?>
-                        <!-- Usuário comum -->
-                        <li>
-                            <span class="white-text">Olá, <?php echo htmlspecialchars($usuario); ?></span>
-                        </li>
-
-                        <li class="<?php echo $pagina_Corrente == 'sair.php' ? 'active' : ''; ?>">
-                            <a href="sair.php">Sair</a>
-                        </li>
-
-                    <?php elseif ($status === 1): ?>
-                        <!-- Administrador -->
-                        <li class="<?php echo $pagina_Corrente == 'crud_users.php' ? 'active' : ''; ?>">
+                    <?php if (isset($_SESSION['status']) == 1) { ?>
+                        <li style="margin-right: 300px;" class="<?php if ($pagina_Corrente == 'crud_users.php') {
+                                        echo 'active';
+                                    } ?>">
                             <a href="crud_users.php">Gerenciar usuários</a>
                         </li>
+                    <?php }  ?>
 
-                        <li>
-                            <span class="white-text">Olá, <?php echo htmlspecialchars($usuario); ?></span>
-                        </li>
 
-                        <li class="<?php echo $pagina_Corrente == 'sair.php' ? 'active' : ''; ?>">
-                            <a href="sair.php">Sair</a>
-                        </li>
+                    <li>
 
-                    <?php endif; ?>
-                </ul>
+                        <h5>
+                            <?php
+                            $logado = 'Usuário';
+                            if (isset($_SESSION['usuario'])) {
+                                $logado = $_SESSION['usuario'];
+                            }
+                            echo "Olá " . $logado;
+                            ?>
+                        </h5>
 
-                <!-- Menu mobile -->
-                <ul id="nav-mobile" class="sidenav">
-                    <li class="<?php echo $pagina_Corrente == 'index.php' ? 'active' : ''; ?>">
-                        <a href="index.php">Início</a>
                     </li>
 
-                    <li class="<?php echo $pagina_Corrente == 'form_museu.php' ? 'active' : ''; ?>">
-                        <a href="form_museu.php">Visitar</a>
-                    </li>
-
-                    <?php if (!$usuario): ?>
-                        <!-- Usuário não logado -->
-                        <li>
-                            <span class="white-text">Usuário anônimo</span>
-                        </li>
-
-                        <li class="<?php echo $pagina_Corrente == 'form_login.php' ? 'active' : ''; ?>">
-                            <a href="form_login.php">Login</a>
-                        </li>
-
-                    <?php elseif ($status === 0): ?>
-                        <!-- Usuário comum -->
-                        <li>
-                            <span class="white-text">Olá, <?php echo htmlspecialchars($usuario); ?></span>
-                        </li>
-
-                        <li class="<?php echo $pagina_Corrente == 'sair.php' ? 'active' : ''; ?>">
+                    <?php if (isset($_SESSION['usuario'])) { ?>
+                        <li class="<?php if ($pagina_Corrente == 'sair.php') {
+                                        echo 'active';
+                                    } ?>">
                             <a href="sair.php">Sair</a>
                         </li>
+                    <?php }  ?>
 
-                    <?php elseif ($status === 1): ?>
-                        <!-- Administrador -->
-                        <li class="<?php echo $pagina_Corrente == 'crud_users.php' ? 'active' : ''; ?>">
-                            <a href="crud_users.php">Gerenciar usuários</a>
+                    <?php if (!isset($_SESSION['usuario'])) { ?>
+                        <li class="<?php if ($pagina_Corrente == 'form_login.php') {
+                                        echo 'active';
+                                    } ?>">
+                            <a href="form_login.php">Logar</a>
+                        </li>
+                    <?php } ?>
+
+
+                    <!-- Menu mobile -->
+                    <ul id="nav-mobile" class="sidenav">
+                        <li class="<?php if ($pagina_Corrente == 'index.php') {
+                                        echo 'active';
+                                    } ?>">
+                            <a href="index.php">Início</a>
+                        </li>
+
+                        <li class="<?php if ($pagina_Corrente == 'form_museu.php') {
+                                        echo 'active';
+                                    } ?>">
+                            <a href="form_museu.php">Visitar</a>
                         </li>
 
                         <li>
-                            <span class="white-text">Olá, <?php echo htmlspecialchars($usuario); ?></span>
+                            <h5>
+                                <?php
+                                if (!empty($_SESSION['usuario'])) {
+                                    $logado = 'Usuário';
+                                }
+                                if (isset($_SESSION['usuario'])) {
+                                    $logado = $_SESSION['usuario'];
+                                }
+                                echo "Olá " . $logado;
+                                ?>
+                            </h5>
                         </li>
 
-                        <li class="<?php echo $pagina_Corrente == 'sair.php' ? 'active' : ''; ?>">
-                            <a href="sair.php">Sair</a>
-                        </li>
-                        
-                    <?php endif; ?>
-                </ul>
+                        <?php if ($_SESSION['usuario']) { ?>
+                            <li class="<?php if ($pagina_Corrente == 'sair.php') {
+                                            echo 'active';
+                                        } ?>">
+                                <a href="sair.php">Sair</a>
+                            </li>
+                        <?php }  ?>
 
-                <!-- Botão hamburger para mobile -->
-                <a href="#" data-target="nav-mobile" class="sidenav-trigger">
-                    <i class="material-icons">menu</i>
-                </a>
+                    </ul>
+
+                    <!-- Hamburger -->
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+                        <i class="material-icons">menu</i>
+                    </a>
             </div>
         </nav>
     </div>
 </header>
 
-<!-- Inicialização do sidenav (menu mobile) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
-    $(document).ready(function () {
+    // Inicializa o Sidenav para o menu mobile
+    $(document).ready(function() {
         $('.sidenav').sidenav();
     });
 </script>

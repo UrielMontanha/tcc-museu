@@ -43,6 +43,18 @@
         <h2>Objetos do museu</h2>
         <p>Aqui é o local onde você poderá visitar os objetos do museu. Um espaço dedicado a preservar e compartilhar peças históricas, artísticas e culturais que contam histórias fascinantes e conectam gerações. Experiência enriquecedora e inspiradora ao explorar essas preciosidades!</p>
         <div class="divider"> </div>
+<br>
+      <nav>
+        <div class="nav-wrapper #fafafa grey lighten-5">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" placeholder="Pesquise alguma informação específica aqui..." required>
+              <label class="label-icon" for="search"><i class="material-icons black-text">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </nav>
 
         <br><br>
 

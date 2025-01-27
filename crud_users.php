@@ -20,9 +20,10 @@
     <main class="container wrappercont">
         <h1>Usuários</h1>
 
-        <a href="form_cad_user.php" class="#0d47a1 blue darken-4 waves-effect waves-light btn"><i class="material-icons right">add</i>Inserir</a>
+        <a href="form_cad_user.php" class="#01579b light-blue darken-4 waves-effect waves-light btn white-text"><i class="material-icons right">add</i>Inserir</a>
+
         <div class="col s2">
-            <p> <a href="adm_form_museu.php" class="btn waves-effect waves-light brown  lighten-3">Voltar</a> </p>
+            <p> <a href="adm_form_museu.php" class="btn waves-effect waves-light red darken-4 white-text">Voltar</a> </p>
         </div>
 
         <br> <br>
@@ -48,7 +49,10 @@
                         <td> <?php echo $linha['nome'] ?> </td>
                         <td> <?php $dataNasc = date('d/m/y', strtotime($linha['data_nasc']));
                                 echo $dataNasc; ?> </td>
-                        <td><a href="#modal<?php echo $linha['id_usuario']; ?>" class="btn-floating btn-medium waves-effect waves-light #bf360c deep-orange darken-4 modal-trigger"><i class="material-icons">delete</i></a> </td>
+                                                
+                        <td><a href="#modal<?php echo $linha['id_usuario']; ?>" class="btn-floating btn-medium waves-effect waves-light #01579b light-blue darken-4 modal-trigger white-text"><i class="material-icons">edit</i></a> 
+
+                        <a href="#modal<?php echo $linha['id_usuario']; ?>" class="btn-floating btn-medium waves-effect waves-light red darken-4 white-text modal-trigger"><i class="material-icons">delete</i></a> </td>
 
                         <div id="modal<?php echo $linha['id_usuario']; ?>" class="modal">
                             <div class="modal-content">
