@@ -153,11 +153,53 @@ $objeto = mysqli_fetch_assoc($resultado);
                             class="btn-floating btn-medium waves-effect waves-light grey lighten-5 modal-trigger">
                             <i class="material-icons black-text">edit</i>
                         </a>
-                        <a href="excluir_com.php?id_usuario=<?php echo $linha['id_usuario']; ?>&id_com=<?php echo $linha['id_com']; ?>" 
-                            class="btn-floating btn-medium waves-effect waves-light grey lighten-5">
+
+                        <!-- <a href="#modal" class="btn-floating btn-medium waves-effect waves-light grey lighten-5">
                             <i class="material-icons black-text">delete</i>
                         </a>
+
+                        <div id="modal<?php// echo $linha['id_com']; ?>" class="modal">
+                            <div class="modal-content black-text">
+                                <h4>Atenção</h4>
+                                <p>Você tem certeza que deseja excluir seu comentário?
+                                <h6> <?php// echo $linha['comentario']; ?> </h6>
+                                </p>
+                            </div>
+
+                            <div class="modal-footer">
+                                <form action="excluir_com.php?id_usuario=<?php// echo $linha['id_usuario']; ?>&id_com=<?php// echo $linha['id_com']; ?>&id_obj=<?php// echo $linha['id_obj']; ?>" method="POST">
+
+                                    <input type="hidden" name="id_obj" value="<?php// echo $linha['id_com']; ?>">
+
+                                    <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
+                                        Cancelar </button>
+
+                                    <button type="submit" name="btn-deletar" class="modal-action modal-close  btn waves-light #00796b teal darken-2">
+                                        Confirmar </button>
+
+                                </form>
+                            </div>
+                        </div>                                                                                      ARRUMAR TUDO ISTO!!!
+
+                        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+        // Verifica se o parâmetro 'deletado' está na URL
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('deletado')) {
+            M.toast({
+                html: 'Registro apagado!',
+                displayLength: 4000
+            });
+            // Retira o parâmetro 'deletado' da URL
+            urlParams.delete('deletado');
+            // Atualiza a URL sem recarregar a página
+            window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+        }
+        </script> -->
+
                         <br><br>
+                       
                         <?php
                 }
             }

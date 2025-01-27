@@ -23,7 +23,7 @@ $resultado = executarSQL($conexao, $sql);
 
 
 
-// require_once "conecta.php";
+<!-- // require_once "conecta.php";
 // $conexao = conectar();
 
 // $id = $_GET['id_obj'];
@@ -36,4 +36,4 @@ $resultado = executarSQL($conexao, $sql);
 // header('location:adm_form_museu.php');
 // if ($resultado == false) {
 //     echo "<h3>Erro ao buscar no banco</h3>";
-// }
+// } -->
