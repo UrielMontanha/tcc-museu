@@ -1,5 +1,6 @@
 <?php
-session_start();
+include_once "header.php";
+require_once "conecta.php";
 include("permadm.php");
 
 ?>
@@ -188,7 +189,7 @@ include("permadm.php");
                 <div class="input-field col s12">
                     <!-- Label do botão de envio -->
                     <div class="file-field input-field">
-                        <div class="btn waves-effect waves-light #0d47a1 blue darken-4">
+                        <div class="btn waves-effect waves-light #01579b light-blue darken-4">
                             <span>Selecione uma imagem para a foto de perfil</span>
                             <!-- Input de Arquivo -->
                             <input type="file" name="foto_perfil">
@@ -213,15 +214,9 @@ include("permadm.php");
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">
-                            <button class="#0d47a1 blue darken-4 waves-effect waves-light btn" type="submit" name="action">Cadastrar
+                            <a href="crud_users.php" class="btn waves-effect waves-light red darken-4 white-text left">Voltar</a>
+                            <button class="btn waves-effect waves-light #01579b light-blue darken-4 white-text right" type="submit" name="action">Cadastrar</button>
                         </p>
-                    </div>
-
-                    <div class="col s2">
-                        <p class="center-align">
-                            <a href="adm_form_museu.php" class="btn waves-effect waves-light brown  lighten-3">Voltar</a>
-                        </p>
-                    </div>
                 </div>
 
 

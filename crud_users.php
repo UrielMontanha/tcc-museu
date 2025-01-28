@@ -6,25 +6,23 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciamento de usuários</title>
 </head>
 
 <body>
-    <?php include_once("header.php") ?>
-    <?php include_once("conecta.php");
+    <?php 
+    include_once "header.php";
+    require_once "conecta.php";
+    include("permadm.php");
     $conexao = conectar(); ?>
 
     <main class="container">
         <h1>Usuários</h1>
 
         <a href="form_cad_user.php" class="#01579b light-blue darken-4 waves-effect waves-light btn white-text"><i class="material-icons right">add</i>Inserir</a>
-
-        <div class="col s2">
-            <p> <a href="adm_form_museu.php" class="btn waves-effect waves-light red darken-4 white-text">Voltar</a> </p>
-        </div>
 
         <br> <br>
 
@@ -70,7 +68,7 @@
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
 
-                                    <button type="submi" name="btn-deletar" class="modal-action modal-close  btn waves-light #00796b teal darken-2">
+                                    <button type="submi" name="btn-deletar" class="modal-action modal-close  btn waves-light #01579b light-blue darken-4">
                                         Confirmar </button>
 
                                 </form>

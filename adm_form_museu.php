@@ -78,7 +78,7 @@ $resultado = executarSQL($conexao, $sql);
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
 
-                                    <button type="submit" name="btn-deletar" class="modal-action modal-close  btn waves-light #00796b teal darken-2">
+                                    <button type="submit" name="btn-deletar" class="modal-action modal-close btn waves-light #01579b light-blue darken-4 white-text">
                                         Confirmar </button>
 
                                 </form>
