@@ -19,4 +19,4 @@ $conexao->query($sql);
 $linhasAfetadas = $conexao->affected_rows;
 
 
-header('location:form_obj.php?id_obj=' . $id_obj);
+header('location:form_obj.php?id_obj=' . $id_obj . '&deletado=true');

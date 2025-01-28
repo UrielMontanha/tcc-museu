@@ -26,20 +26,20 @@ $resultado = executarSQL($conexao, $sql);
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gerenciamento de objetos</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="">
 
 </head>
 
-<body>
+<body style="color: black;">
 
-    <main class="container wrappercont" style="margin-top: 5%;">
+    <main class="container" style="margin-top: 5%;">
         <h1>Objetos</h1>
         <br> <br>
-        <a href="adm_form_cad_obj.php" class="btn waves-effect waves-light #fafafa grey lighten-5 black-text"><i class="material-icons right">add</i>Cadastrar Objeto</a>
+        <a href="adm_form_cad_obj.php" class="btn waves-effect waves-light #01579b light-blue darken-4 white-text"><i class="material-icons right">add</i>Cadastrar Objeto</a>
 
         <br> <br> <br>
 
-        <table class="bordered centered  responsive-table white-text" id="table">
+        <table class="bordered centered  responsive-table black-text" id="table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -56,7 +56,7 @@ $resultado = executarSQL($conexao, $sql);
                     <tr>
                         <td> <?php echo $linha['id_obj'] ?> </td>
                         <td> <?php echo $linha['nome'] ?> </td>
-                        <td style="max-width: 400px;"> <img style="width:100%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
+                        <td style="max-width: 160px;"> <img style="width: 40%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
 
                         <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #01579b light-blue darken-4 modal-trigger white-text"><i class="material-icons">edit</i></a>
 

@@ -26,6 +26,18 @@ $objeto = mysqli_fetch_assoc($resultado);
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+        });
+
+    </script>
+
+
     <style>
         .row {
             margin-top: 50px;
@@ -154,41 +166,39 @@ $objeto = mysqli_fetch_assoc($resultado);
                             <i class="material-icons black-text">edit</i>
                         </a>
 
-                        <!-- <a href="#modal" class="btn-floating btn-medium waves-effect waves-light grey lighten-5">
+                        <a href="#!" class="btn-floating btn-medium waves-effect waves-light grey lighten-5 modal-trigger" data-target="modal<?php echo $linha['id_com']; ?>">
                             <i class="material-icons black-text">delete</i>
                         </a>
 
-                        <div id="modal<?php// echo $linha['id_com']; ?>" class="modal">
+                        <div id="modal<?php echo $linha['id_com']; ?>" class="modal">
                             <div class="modal-content black-text">
                                 <h4>Atenção</h4>
                                 <p>Você tem certeza que deseja excluir seu comentário?
-                                <h6> <?php// echo $linha['comentario']; ?> </h6>
+                                <h6> <?php echo $linha['comentario']; ?> </h6>
                                 </p>
                             </div>
 
                             <div class="modal-footer">
-                                <form action="excluir_com.php?id_usuario=<?php// echo $linha['id_usuario']; ?>&id_com=<?php// echo $linha['id_com']; ?>&id_obj=<?php// echo $linha['id_obj']; ?>" method="POST">
+                                <form action="excluir_com.php?id_usuario=<?php echo $linha['id_usuario']; ?>&id_com=<?php echo $linha['id_com']; ?>&id_obj=<?php echo $linha['id_obj']; ?>" method="POST">
 
-                                    <input type="hidden" name="id_obj" value="<?php// echo $linha['id_com']; ?>">
+                                    <input type="hidden" name="id_obj" value="<?php echo $linha['id_com']; ?>">
 
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
 
-                                    <button type="submit" name="btn-deletar" class="modal-action modal-close  btn waves-light #00796b teal darken-2">
+                                    <button type="submit" name="btn-deletar" class="modal-action modal-close  btn waves-light #01579b light-blue darken-4">
                                         Confirmar </button>
 
                                 </form>
                             </div>
-                        </div>                                                                                      ARRUMAR TUDO ISTO!!!
-
-                        <script type="text/javascript" src="js/materialize.min.js"></script>
+                        </div>
 
     <script>
         // Verifica se o parâmetro 'deletado' está na URL
         var urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('deletado')) {
             M.toast({
-                html: 'Registro apagado!',
+                html: 'Comentário apagado!',
                 displayLength: 4000
             });
             // Retira o parâmetro 'deletado' da URL
@@ -196,7 +206,7 @@ $objeto = mysqli_fetch_assoc($resultado);
             // Atualiza a URL sem recarregar a página
             window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
         }
-        </script> -->
+    </script>
 
                         <br><br>
                        

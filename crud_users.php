@@ -17,7 +17,7 @@
     <?php include_once("conecta.php");
     $conexao = conectar(); ?>
 
-    <main class="container wrappercont">
+    <main class="container">
         <h1>Usuários</h1>
 
         <a href="form_cad_user.php" class="#01579b light-blue darken-4 waves-effect waves-light btn white-text"><i class="material-icons right">add</i>Inserir</a>
