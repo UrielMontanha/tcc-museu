@@ -166,7 +166,12 @@ include("permadm.php");
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="condicao" name="condicao" type="text" class="validate" pattern="^[A-Za-zÀ-ÿ\s\-]+$" required>
+                        <select id="condicao" name="condicao" required>
+                            <option value="" disabled selected>Escolha uma opção</option>
+                            <option value="boa">Boa</option>
+                            <option value="media">Média</option>
+                            <option value="ruim">Ruim</option>
+                        </select>
                         <label for="condicao" style="color: black;">Condição</label>
                         <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                     </div>

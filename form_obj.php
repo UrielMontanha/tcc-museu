@@ -87,15 +87,14 @@ $objeto = mysqli_fetch_assoc($resultado);
 
 
             <div class="col s12">
-                <p class="white-text" name="data_chegada"> Data de quando o objeto chegou no museu: <?php echo $objeto['data_chegada'] ?>. </p>
+                <p class="white-text" name="data_chegada"> Data de quando o objeto chegou no museu A/M/D: <?php echo $objeto['data_chegada'] ?>. </p>
 
-                <p class="white-text" name="data_criacao"> Data de quando o objeto foi criado: <?php echo $objeto['data_criacao'] ?>. </p>
+                <p class="white-text" name="data_criacao"> Data de quando o objeto foi criado A/M/D: <?php echo $objeto['data_criacao'] ?>. </p>
 
                 <p class="white-text" name="condicao"> Condição do objeto: <?php echo $objeto['condicao'] ?>. </p>
 
                 <p class="white-text" name="pais_origem"> País origem do objeto: <?php echo $objeto['pais_origem'] ?>. </p>
-
-                <p class="white-text" name="cidade_origem"> Cidade origem: <?php echo $objeto['cidade_origem'] ?>. </p>
+                
                 <br>
                 <p class="white-text"> História do objeto: </p>
 
@@ -158,7 +157,7 @@ $objeto = mysqli_fetch_assoc($resultado);
                     echo "<h6><b>" . $linha['nome'] . "</b> comentou:</h6>" . $linha['comentario'] . "<br><br>";
                 
 
-                    if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $linha['id_usuario']) {
+                    if (isset($_SESSION['id_usuario']) && ($_SESSION['id_usuario'] == $linha['id_usuario'] || $_SESSION['status'] == 1)) {
                         ?>
                         <a href="#!" 
                             onclick="openEditModal('<?php echo $linha['id_com']; ?>', '<?php echo addslashes($linha['comentario']); ?>', '<?php echo $linha['id_obj']; ?>')" 
