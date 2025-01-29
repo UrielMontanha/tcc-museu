@@ -123,6 +123,7 @@ $pagina_Corrente = basename($_SERVER['SCRIPT_NAME']);
             </div>
         </nav>
     </div>
+
 </header>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

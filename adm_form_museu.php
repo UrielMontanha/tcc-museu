@@ -30,6 +30,23 @@ $resultado = executarSQL($conexao, $sql);
 
 </head>
 
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('sucesso')) {
+        M.toast({
+            html: 'Objeto cadastrado com sucesso!',
+            displayLength: 4000 // A mensagem ficará visível por 4 segundos
+        });
+        // Retira o parâmetro 'sucesso' da URL para não mostrar a mensagem novamente em recarregamentos
+        urlParams.delete('sucesso');
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+    }
+});
+
+</script>
+
 <body style="color: black;">
 
     <main class="container" style="margin-top: 5%;">
@@ -59,6 +76,43 @@ $resultado = executarSQL($conexao, $sql);
                         <td style="max-width: 160px;"> <img style="width: 40%" src="css/imagens_obj/<?php echo $linha['arquivo']; ?>"> </td>
 
                         <td><a href="form_edit_obj.php?id_obj= <?= $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light #01579b light-blue darken-4 modal-trigger white-text"><i class="material-icons">edit</i></a>
+
+                        <!-- Modal de Sucesso para o editar -->
+                        <div id="modalSuccess" class="modal">
+                            <div class="modal-content">
+                                <h4>Sucesso!</h4>
+                                <p>Objeto alterado com sucesso!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+                            </div>
+                        </div>
+
+                        <!-- Modal de Erro para o editar -->
+                        <div id="modalError" class="modal">
+                            <div class="modal-content">
+                                <h4>Erro!</h4>
+                                <p>Ocorreu um erro ao atualizar o objeto. Tente novamente.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>
+                            </div>
+                        </div>
+
+                        <?php
+                        // Verificando se a URL tem parâmetros de sucesso ou erro
+                        if (isset($_GET['success']) && $_GET['success'] == 'true') {
+                            echo "<script>
+                                var successModal = document.getElementById('modalSuccess');
+                                M.Modal.getInstance(successModal).open();
+                                </script>";
+                        } elseif (isset($_GET['error']) && $_GET['error'] == 'true') {
+                            echo "<script>
+                            var errorModal = document.getElementById('modalError');
+                            M.Modal.getInstance(errorModal).open();
+                            </script>";
+                        }
+                        ?>
 
                         <a href="#modal<?php echo $linha['id_obj']; ?>" class="btn-floating btn-medium waves-effect waves-light red darken-4 white-text modal-trigger"><i class="material-icons">delete</i></a> </td>
 
@@ -94,6 +148,15 @@ $resultado = executarSQL($conexao, $sql);
 
     </main>
 
+    <?php 
+  // Verifica se o usuário está logado e exibe o toast
+  if (isset($_SESSION['usuario'])) {
+      echo "<script>
+              M.toast({html: 'Você está logado como " . $_SESSION['usuario'] . "'});
+            </script>";
+  }
+  ?>
+
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <script>
@@ -101,7 +164,7 @@ $resultado = executarSQL($conexao, $sql);
         var urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('deletado')) {
             M.toast({
-                html: 'Registro apagado!',
+                html: 'Objeto deletado com sucesso!',
                 displayLength: 4000
             });
             // Retira o parâmetro 'deletado' da URL
@@ -111,6 +174,33 @@ $resultado = executarSQL($conexao, $sql);
         }
 
 
+
+        document.addEventListener('DOMContentLoaded', function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    
+    // Verifica se o parâmetro 'success' está na URL
+    if (urlParams.has('success')) {
+        M.toast({
+            html: 'Objeto editado com sucesso!',
+            displayLength: 4000 // A mensagem ficará visível por 4 segundos
+        });
+        // Retira o parâmetro 'success' da URL para não mostrar a mensagem novamente em recarregamentos
+        urlParams.delete('success');
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+    }
+
+    // Verifica se o parâmetro 'deletado' está na URL
+    if (urlParams.has('deletado')) {
+        M.toast({
+            html: 'Registro apagado!',
+            displayLength: 4000
+        });
+        // Retira o parâmetro 'deletado' da URL
+        urlParams.delete('deletado');
+        // Atualiza a URL sem recarregar a página
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+    }
+});
 
 
 
@@ -125,8 +215,13 @@ $resultado = executarSQL($conexao, $sql);
             var elems = document.querySelectorAll('.sidnav');
             var instances;
         })
-    </script>
 
+        // Inicializando os modais
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            M.Modal.init(elems);
+        });
+</script>
 
 </body>
 

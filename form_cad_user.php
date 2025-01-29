@@ -186,31 +186,6 @@ include("permadm.php");
 
 
 
-                <div class="input-field col s12">
-                    <!-- Label do botão de envio -->
-                    <div class="file-field input-field">
-                        <div class="btn waves-effect waves-light #01579b light-blue darken-4">
-                            <span>Selecione uma imagem para a foto de perfil</span>
-                            <!-- Input de Arquivo -->
-                            <input type="file" name="foto_perfil">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Nenhum arquivo selecionado" readonly>
-                        </div>
-                    </div>
-                    <!-- Helper Text (mensagem de erro) -->
-                    <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
-                </div>
-
-                <!-- <div class="row">
-                    <div class="input-field col s12">
-                        <button class="btn waves-effect waves-light #0d47a1 blue darken-4" type="submit" name="action"><input type="file" name="arquivo"></button>
-                        <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
-                    </div>
-                </div> -->
-
-
-
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">
@@ -218,19 +193,6 @@ include("permadm.php");
                             <button class="btn waves-effect waves-light #01579b light-blue darken-4 white-text right" type="submit" name="action">Cadastrar</button>
                         </p>
                 </div>
-
-
-                <!-- <div class="row">
-                    <div class="col s2">
-                        <p class="center-align">
-                            <button class="btn waves-effect waves-light brown  lighten-3" type="submit" name="action">Voltar
-                                <i class="material-icons right">send</i> </button>
-                        </p>
-                    </div>
-                </div> -->
-
-
-
         </form>
 
 
@@ -263,17 +225,7 @@ include("permadm.php");
             var elems = document.querySelectorAll('select');
             var instances = M.FormSelect.init(elems);
         });
-
-        /*
-
-        var CPF = document.getElementById("CPF");
-        CPF.addEventListener("input", function (event) {
-          if (CPF.validity) {
-            CPF.setCustomValidity(" ");
-          } else {
-            CPF.setCustomValidity("");
-          }
-        }); */
+        
     </script>
 
 

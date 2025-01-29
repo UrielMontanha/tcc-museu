@@ -5,16 +5,14 @@ include("permadm.php");
 
 $conexao = conectar();
 
-$id_obj = $_GET['id_obj'];
+$id_usuario = $_GET['id_usuario'];
 
-$sql = "SELECT * FROM objeto WHERE id_obj = $id_obj";
+$sql = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
 
 $resultado = executarSQL($conexao, $sql);
 
 
-$objeto = mysqli_fetch_assoc($resultado);
-
-$foto = $objeto['arquivo'];
+$usuario = mysqli_fetch_assoc($resultado);
 
 ?>
 
@@ -137,69 +135,40 @@ $foto = $objeto['arquivo'];
 
     <main class="container" style="margin-top: 3%;">
 
-        <h1 class="center-align">Editar objetos</h1>
-        <form action="edit_obj.php" enctype="multipart/form-data" method="post">
+        <h1 class="center-align">Editar usuários</h1>
+        <form action="editar_user.php" enctype="multipart/form-data" method="post">
 
             <!-- <div class="card-panel"> -->
 
-                <input type="hidden" name="id_obj" value="<?php echo $objeto['id_obj'] ?>">
+                <input type="hidden" name="id_usuario" value="<?php echo $usuario['id_usuario'] ?>">
 
-                Nome do objeto: <?php $nome ?><input type="text" name="nome" style="color: black;" value="<?php echo $objeto['nome']; ?>" class="validate" placeholder="Nome do objeto">
+                Nome do usuário: <?php $nome ?><input type="text" name="nome" style="color: black;" value="<?php echo $usuario['nome']; ?>" class="validate" placeholder="Nome do usuário">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Data de criação: <input type="date" name="data_criacao" style="color: black;" value="<?php echo $objeto['data_criacao'] ?>" class="validate" placeholder="Data de criação">
+                Email: <input type="text" name="email" style="color: black;" value="<?php echo $usuario['email']; ?>" class="validate" placeholder="Email">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Data de chegada: <input type="date" name="data_chegada" style="color: black;" value="<?php echo $objeto['data_chegada'] ?>" class="validate" placeholder="Data de chegada">
+                Data de Nascimento: <input type="date" name="data_nasc" style="color: black;" value="<?php echo $usuario['data_nasc'] ?>" class="validate" placeholder="Data de criação">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                Condição: <input type="text" name="condicao" style="color: black;" value="<?php echo $objeto['condicao'] ?>" class="validate" placeholder="Condição do objeto">
+                CPF: <input type="text" name="cpf" style="color: black;" value="<?php echo $usuario['cpf'] ?>" class="validate" placeholder="CPF">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
 
-                País: <input type="text" name="pais_origem" style="color: black;" value="<?php echo $objeto['pais_origem'] ?>" class="validate" placeholder="País de origem">
+                Status: <input type="number" name="status" style="color: black;" value="<?php echo $usuario['status'] ?>" class="validate" placeholder="Status">
                 <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
                 <br> <br>
-
-                História: <br>
-                <textarea name="historia" style="color: black;" value="<?php echo $objeto['historia'] ?>" id="10" cols="30" rows="10" placeholder="História do objeto"><?php echo $objeto['historia'] ?></textarea>
-                <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
-                <br> <br> <br>
-
-                <!-- Este input hidden é para que o arquivo que já está no banco continue, quando o usuário não quiser trocar -->
-                <input type="hidden" name="nome_arquivo" value="<?= $foto ?>">
-
-
-
-                <div class="input-field col s12">
-                    <!-- Label do botão de envio -->
-                    <div class="file-field input-field">
-                        <div class="btn waves-effect waves-light #01579b light-blue darken-4 white-text">
-                            <span>Selecione um Arquivo</span>
-                            <!-- Input de Arquivo -->
-                            <input type="file" name="arquivo" value="<?= $objeto['arquivo']; ?>">
-                        </div>
-                        <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder="Nenhum arquivo selecionado" readonly>
-                        </div>
-                    </div>
-                    <!-- Helper Text (mensagem de erro) -->
-                    <span class="helper-text" data-error="Campo com preenchimento obrigatório."></span>
-                </div>
-
-
 
 <br><br>
-
 
 
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">
-                            <a href="adm_form_museu.php" class="btn waves-effect waves-light red darken-4 white-text left">Voltar</a>
+                            <a href="crud_users.php" class="btn waves-effect waves-light red darken-4 white-text left">Voltar</a>
                             <button class="btn waves-effect waves-light #01579b light-blue darken-4 white-text right" type="submit" name="action">Editar</button>
                         </p>
                     </div>

@@ -48,7 +48,7 @@
                         <td> <?php $dataNasc = date('d/m/y', strtotime($linha['data_nasc']));
                                 echo $dataNasc; ?> </td>
                                                 
-                        <td><a href="#modal<?php echo $linha['id_usuario']; ?>" class="btn-floating btn-medium waves-effect waves-light #01579b light-blue darken-4 modal-trigger white-text"><i class="material-icons">edit</i></a> 
+                        <td><a href="form_editar_user.php?id_usuario=<?php echo $linha['id_usuario']; ?>" class="btn-floating btn-medium waves-effect waves-light #01579b light-blue darken-4 modal-trigger white-text"><i class="material-icons">edit</i></a>
 
                         <a href="#modal<?php echo $linha['id_usuario']; ?>" class="btn-floating btn-medium waves-effect waves-light red darken-4 white-text modal-trigger"><i class="material-icons">delete</i></a> </td>
 
@@ -68,7 +68,7 @@
                                     <button type="button" name="btn-cancelar" class="modal-action modal-close waves-red btn #b71c1c red darken-4 darken-1">
                                         Cancelar </button>
 
-                                    <button type="submi" name="btn-deletar" class="modal-action modal-close  btn waves-light #01579b light-blue darken-4">
+                                    <button type="submit" name="btn-deletar" class="modal-action modal-close  btn waves-light #01579b light-blue darken-4">
                                         Confirmar </button>
 
                                 </form>
@@ -87,35 +87,53 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <script>
-        // Verifica se o parâmetro 'deletado' está na URL
-        var urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('deletado')) {
-            M.toast({
-                html: 'Registro apagado!',
-                displayLength: 4000
-            });
-            // Retira o parâmetro 'deletado' da URL
-            urlParams.delete('deletado');
-            // Atualiza a URL sem recarregar a página
-            window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
-        }
-
-
-
-
-
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.modal');
-            var instances = M.Modal.init(elems);
+    // Verifica se o parâmetro 'deletado' está na URL
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('deletado') && urlParams.get('deletado') === 'true') {
+        M.toast({
+            html: 'Usuário deletado com sucesso!',
+            displayLength: 4000
         });
+        // Retira o parâmetro 'deletado' da URL
+        urlParams.delete('deletado');
+        // Atualiza a URL sem recarregar a página
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidnav');
-            var instances;
-        })
-    </script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+
+
+
+    // Verifica se o parâmetro 'cadastrado' está na URL
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('cadastrado') && urlParams.get('cadastrado') === 'true') {
+        M.toast({
+            html: 'Usuário cadastrado com sucesso!',
+            displayLength: 4000
+        });
+    // Retira o parâmetro 'cadastrado' da URL para que o toast não seja mostrado novamente em um novo carregamento
+    urlParams.delete('cadastrado');
+    window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+}
+
+
+
+    // Verifica se o parâmetro 'atualizado' está na URL
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('atualizado') && urlParams.get('atualizado') === 'true') {
+        M.toast({
+            html: 'Usuário alterado com sucesso!',
+            displayLength: 4000
+        });
+        // Retira o parâmetro 'atualizado' da URL para que o toast não seja mostrado novamente em um novo carregamento
+        urlParams.delete('atualizado');
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+    }
+
+</script>
 
 
 </body>

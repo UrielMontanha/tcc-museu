@@ -44,17 +44,8 @@ $sql = "INSERT INTO objeto (nome, data_criacao, data_chegada, condicao, pais_ori
 '$pais_origem', '$historia', '$ne')";
 $resultado = mysqli_query($conexao, $sql);
 
-if ($resultado === false) {
-    if (mysqli_errno($conexao) == 1062) {
-        echo "<h3> Este objeto já foi dacastrado no sistema!
-        <br> <br> Voltar para cadastrarum novo objeto <a href='adm_form_cad_obj.php'>Voltar</a> </h3>";
-    }
-    echo " <br> <br> Erro ao inserir novo objeto!" . mysqli_errno($conexao) . ": " . mysqli_error($conexao);
-    die();
-}
-
 if ($resultado === true) {
-    echo "<h3>Objeto cadastrado com sucesso! <br> <br> 
-    <a href='adm_form_cad_obj.php'>Continuar cadastrando</a>
-    <br> <br> <a href='adm_form_museu.php'>Voltar</a><h3>";
+    // Redireciona com o parâmetro 'sucesso'
+    header('Location: adm_form_museu.php?sucesso=1');
+    exit(); // Não continua a execução do script
 }

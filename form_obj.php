@@ -161,10 +161,11 @@ $objeto = mysqli_fetch_assoc($resultado);
                     if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario'] == $linha['id_usuario']) {
                         ?>
                         <a href="#!" 
-                            onclick="openEditModal('<?php echo $linha['id_com']; ?>', '<?php echo addslashes($linha['comentario']); ?>')" 
+                            onclick="openEditModal('<?php echo $linha['id_com']; ?>', '<?php echo addslashes($linha['comentario']); ?>', '<?php echo $linha['id_obj']; ?>')" 
                             class="btn-floating btn-medium waves-effect waves-light grey lighten-5 modal-trigger">
                             <i class="material-icons black-text">edit</i>
                         </a>
+
 
                         <a href="#!" class="btn-floating btn-medium waves-effect waves-light grey lighten-5 modal-trigger" data-target="modal<?php echo $linha['id_com']; ?>">
                             <i class="material-icons black-text">delete</i>
@@ -198,7 +199,7 @@ $objeto = mysqli_fetch_assoc($resultado);
         var urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('deletado')) {
             M.toast({
-                html: 'Comentário apagado!',
+                html: 'Comentário apagado!</p>',
                 displayLength: 4000
             });
             // Retira o parâmetro 'deletado' da URL
@@ -228,38 +229,84 @@ $objeto = mysqli_fetch_assoc($resultado);
 
     </main>
 
-
-    <!-- modal editar comentário -->
     <div id="textareaModal" class="modal">
-    <form action="editar_com.php" method="post">
-        <div class="modal-content">
-            <h5>Editar Comentário</h5>
-            <input type="hidden" id="editar-id" name="id_com">
-            <textarea id="editar-comentario" class="materialize-textarea textarea-custom" name="texto" required></textarea>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="modal-close btn-flat red darken-4 white-text">Fechar</a>
-            <button type="submit" class="btn #01579b light-blue darken-4">Salvar</button>
-        </div>
-    </form>
-</div>
-
+        <form action="editar_com.php" method="post">
+            <div class="modal-content">
+                <h5>Editar Comentário</h5>
+                <input type="hidden" id="editar-id" name="id_com">
+                <input type="hidden" id="id_obj_editar" name="id_obj"> <!-- Novo campo para id_obj -->
+                <textarea id="editar-comentario" class="materialize-textarea textarea-custom" name="texto" required></textarea>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close btn-flat red darken-4 white-text">Fechar</a>
+                <button type="submit" class="btn #01579b light-blue darken-4">Salvar</button>
+            </div>
+        </form>
+    </div>
 
 <script>
+
+var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('editado')) {
+        var editado = urlParams.get('editado');
+        if (editado == '1') {
+            M.toast({
+                html: 'Comentário editado com sucesso!',
+                displayLength: 4000
+            });
+        } else if (editado == '0') {
+            M.toast({
+                html: 'Erro ao editar o comentário!',
+                displayLength: 4000
+            });
+        }
+        // Retira o parâmetro 'editado' da URL
+        urlParams.delete('editado');
+        // Atualiza a URL sem recarregar a página
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+    }
+
+
+
+    // Verifica se o parâmetro 'comentario_cadastrado' está na URL
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('comentario_cadastrado')) {
+        var comentarioCadastrado = urlParams.get('comentario_cadastrado');
+        if (comentarioCadastrado == '1') {
+            M.toast({
+                html: 'Comentário cadastrado com sucesso!',
+                displayLength: 4000
+            });
+        } else if (comentarioCadastrado == '0') {
+            M.toast({
+                html: 'Erro ao cadastrar comentário!',
+                displayLength: 4000
+            });
+        }
+        // Retira o parâmetro 'comentario_cadastrado' da URL
+        urlParams.delete('comentario_cadastrado');
+        // Atualiza a URL sem recarregar a página
+        window.history.replaceState({}, document.title, window.location.origin + window.location.pathname);
+    }
+
+
+
+    
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.modal');
             M.Modal.init(elems);
         }); // abre o modal
         
-            function openEditModal(id, comentario) {
-                // Preencher os campos do modal
-                document.getElementById('editar-id').value = id;
-                document.getElementById('editar-comentario').value = comentario;
+        function openEditModal(id, comentario, id_obj) {
+            // Preencher os campos do modal
+            document.getElementById('editar-id').value = id;
+            document.getElementById('editar-comentario').value = comentario;
+            document.getElementById('id_obj_editar').value = id_obj; // Adicionando id_obj ao modal
 
-                // Abrir o modal
-                var modal = document.getElementById('textareaModal');
-                var instance = M.Modal.getInstance(modal);
-                instance.open();
+            // Abrir o modal
+            var modal = document.getElementById('textareaModal');
+            var instance = M.Modal.getInstance(modal);
+            instance.open();
             }
 </script>
 

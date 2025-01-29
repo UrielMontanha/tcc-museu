@@ -27,21 +27,6 @@
         $_SESSION['email'] = $email;
         $_SESSION['status'] = $usuario['status'];;
         $_SESSION['id_usuario'] = $usuario['id_usuario'];
-        
-
-        // if ($usuario == null) {
-        //     // echo "<h3> Usuário não existe no sistema!
-        //     // Por favor, primeiro realize o cadastro no sistema.
-        //     // <br> <br> <a href='form_cad.php'>Voltar para o início</a> </h3>";                                                                                            Fazer o que a Ursula fez para usuario não cadastrado
-        //     // die();
-        // }
-        //
-        // if ($senha == $usuario['senha']) {
-        //     header("Location: index.php");
-        // } else {
-        //     echo "<h3> Senha inválida! Tente novamente. 
-        //     <br> <br> <a href='index.php'>Voltar para o início</a> </h3>";
-        // }
 
         if ($_SESSION['status'] == 1) {
             header("location: adm_form_museu.php");

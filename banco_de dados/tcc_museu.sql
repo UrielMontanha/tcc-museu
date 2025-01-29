@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 28/01/2025 às 20:05
+-- Tempo de geração: 29-Jan-2025 às 06:41
 -- Versão do servidor: 8.3.0
--- Versão do PHP: 8.2.18
+-- versão do PHP: 8.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,24 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacoes`
---
-
-DROP TABLE IF EXISTS `avaliacoes`;
-CREATE TABLE IF NOT EXISTS `avaliacoes` (
-  `id_aval` int NOT NULL,
-  `id_usuario` int DEFAULT NULL,
-  `id_obj` int DEFAULT NULL,
-  `avaliacao` text,
-  PRIMARY KEY (`id_aval`),
-  KEY `fk_id_usuario` (`id_usuario`),
-  KEY `fk_id_obj` (`id_obj`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `comentarios`
+-- Estrutura da tabela `comentarios`
 --
 
 DROP TABLE IF EXISTS `comentarios`;
@@ -54,25 +37,19 @@ CREATE TABLE IF NOT EXISTS `comentarios` (
   PRIMARY KEY (`id_com`),
   KEY `fk_c_id_usuario` (`id_usuario`),
   KEY `fk_c_id_obj` (`id_obj`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `comentarios`
+-- Extraindo dados da tabela `comentarios`
 --
 
 INSERT INTO `comentarios` (`id_com`, `id_usuario`, `id_obj`, `comentario`, `nome`) VALUES
-(11, 37, 13, 'ssssss', 'admnistrador'),
-(13, 40, 16, 'Eae ratatatatata', 'Aldeído'),
-(21, 34, 16, 'dedededededed', 'Mundo Animal'),
-(23, 40, 15, '1.10.32.', 'Aldeído'),
-(24, 40, 15, 'Brasil.  This book is a treatise on the theory of ethics', 'Aldeído'),
-(30, 34, 15, 'Cabeça na bandeja', 'Mundo Animal'),
-(31, 34, 15, 'Avivamento! Morra!', 'Mundo Animal');
+(50, 34, 19, 'opa!!!', 'Mundo Animal');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objeto`
+-- Estrutura da tabela `objeto`
 --
 
 DROP TABLE IF EXISTS `objeto`;
@@ -87,21 +64,19 @@ CREATE TABLE IF NOT EXISTS `objeto` (
   `pais_origem` varchar(255) NOT NULL,
   `cidade_origem` varchar(255) NOT NULL,
   PRIMARY KEY (`id_obj`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `objeto`
+-- Extraindo dados da tabela `objeto`
 --
 
 INSERT INTO `objeto` (`id_obj`, `nome`, `data_criacao`, `data_chegada`, `condicao`, `historia`, `arquivo`, `pais_origem`, `cidade_origem`) VALUES
-(13, ' TRIUMPH 1800 ROADSTER', '1946-01-01', '2004-03-04', 'Média', 'Why do we use it?\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\n\nWhere does it come from?\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.', '67782d3338250.jpg', 'Inglaterra', ''),
-(15, 'Brasil', '1900-05-05', '1940-05-05', 'boa', 'Why do we use it?\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\n\n\nWhere does it come from?\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.', '6781050fe4e6f.jpg', 'Brasil', ''),
-(16, 'eeee', '1800-06-06', '1950-11-11', 'ruim', 'is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\\n\\n\\nWhere does it come from?\\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, dis', '67810530eb668.jpg', 'Estados Unidos', '');
+(19, 'Cachorro chupetão GEEK', '0000-00-00', '0000-00-00', 'Boa', 'Os aldeídos são compostos orgânicos caracterizados por possuir um grupo funcional carbonila (C=O) ligado a pelo menos um átomo de hidrogênio e localizado na extremidade da cadeia carbônica. Em química, aldeído é uma função orgânica que se caracteriza pela presença em sua estrutura do grupamento carbonila na extremidade da cadeia, caracterizando a presença de um grupo -CHO na extremidade do composto orgânico, denominado aldoxila, metanoila ou formila. Os aldeídos graxos contêm entre 8 e 13 átomos de carbono em sua composição molecular e têm um aroma frutado ou floral muito agradável. Eles podem ser detectados facilmente em concentrações muito baixas. Eles são, na realidade, uma família de componentes que podem ser metálicos, amiláceos, cítricos ou cerosos.', '67999505ac616.jpg', 'Brasil', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `recuperar_senha`
+-- Estrutura da tabela `recuperar_senha`
 --
 
 DROP TABLE IF EXISTS `recuperar_senha`;
@@ -113,17 +88,20 @@ CREATE TABLE IF NOT EXISTS `recuperar_senha` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `recuperar_senha`
+-- Extraindo dados da tabela `recuperar_senha`
 --
 
 INSERT INTO `recuperar_senha` (`email`, `token`, `data_criacao`, `usado`) VALUES
 ('uriel.2022316043@aluno.iffar.edu.br', '4c06af688027deceb8918ecd4e121217f7fb0199039c8f81d9555ed8d7dcd8bf06e99305dac40e060f6b59c29a83dc7af281', '2025-01-06 11:20:32', 0),
-('uriel.2022316043@aluno.iffar.edu.br', '0eb3d9bd5f38d76302fa8e91eead965283f059335ad95c31aac07db24d573b33e67ee20309375b7b41acb6639d4b8fa3c794', '2025-01-06 11:32:54', 1);
+('uriel.2022316043@aluno.iffar.edu.br', '0eb3d9bd5f38d76302fa8e91eead965283f059335ad95c31aac07db24d573b33e67ee20309375b7b41acb6639d4b8fa3c794', '2025-01-06 11:32:54', 1),
+('uriel.2022316043@aluno.iffar.edu.br', 'e1f4b54d9b5c69c1a3499c9dcdcb33241251b2d23d9649b32b2372b4dbe0d80b537689b965196eb2aa0c890653c3f4e9c739', '2025-01-29 03:29:50', 1),
+('uriel.2022316043@aluno.iffar.edu.br', '83476db93b4c5cdc9ad90a57be52f9be7faa34cf6bf195930adc6f39b6d53f7d3b2768b1fbf9d3ace2dad783a490e1f4fb1f', '2025-01-29 03:35:28', 0),
+('uriel.2022316043@aluno.iffar.edu.br', '30b09cac77919ba8e3d96d4cdff20fc32239c990ec435bec1d4a1839e4a2a7bb758d370a0af3b45319de85f8b870f550d7dd', '2025-01-29 03:36:19', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 DROP TABLE IF EXISTS `usuario`;
@@ -134,49 +112,27 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `data_nasc` date NOT NULL,
   `cpf` varchar(11) NOT NULL,
   `status` int NOT NULL,
-  `foto_perfil` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nome`, `senha`, `data_nasc`, `cpf`, `status`, `foto_perfil`, `email`) VALUES
-(34, 'Mundo Animal', 'ddd', '2024-07-27', '00022233352', 0, '', 'mundoanimal@gmail.com'),
-(37, 'admnistrador', '123', '2000-05-24', '77788899900', 1, '', 'adm@gmail.com'),
-(40, 'Aldeído', '123', '0000-00-00', '99988877766', 0, '', 'aldeido@gmail.com');
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `visita`
---
-
-DROP TABLE IF EXISTS `visita`;
-CREATE TABLE IF NOT EXISTS `visita` (
-  `id_visita` int NOT NULL,
-  `data` datetime DEFAULT NULL,
-  `hora` datetime DEFAULT NULL,
-  `num_visitas` int DEFAULT NULL,
-  PRIMARY KEY (`id_visita`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+INSERT INTO `usuario` (`id_usuario`, `nome`, `senha`, `data_nasc`, `cpf`, `status`, `email`) VALUES
+(34, 'Mundo Animal', 'ddd', '2024-07-27', '00022233352', 0, 'mundoanimal@gmail.com'),
+(37, 'admnistrador', '123', '2000-05-24', '77788899900', 1, 'adm@gmail.com'),
+(40, 'Aldeído', '123', '0000-00-00', '99988877766', 0, 'aldeido@gmail.com'),
+(42, 'Uriel Montanha', '$argon2i$v=19$m=65536,t=4,p=1$N2lFSW9KMDBiSUVXcVB6aw$DgoV67VKjeGIsrkgZfVjILY7KFN/3ILbOW05DmiRGrQ', '2007-04-04', '123.123.123', 0, 'uriel.2022316043@aluno.iffar.edu.br');
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `avaliacoes`
---
-ALTER TABLE `avaliacoes`
-  ADD CONSTRAINT `fk_id_obj` FOREIGN KEY (`id_obj`) REFERENCES `objeto` (`id_obj`),
-  ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
-
---
--- Restrições para tabelas `comentarios`
+-- Limitadores para a tabela `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `fk_c_id_obj` FOREIGN KEY (`id_obj`) REFERENCES `objeto` (`id_obj`),
