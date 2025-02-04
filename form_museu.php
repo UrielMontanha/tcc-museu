@@ -113,9 +113,37 @@
 
 
 
-        <?php } ?>
+        <?php } ?>        
 
   </main>
+
+        <br><br><br>
+
+        <footer class="page-footer #212121 grey darken-4">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Casa da Cultura Dr. Pedro Marini</h5>
+                <p class="grey-text text-lighten-4">Museu aprovado pela Lei Mun n° 1475/79. Tombado pelo patrimonio Histórico do Município, n°147/87.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links e Informações</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://www.uruguaiana.rs.gov.br/portal/turismo/0/9/15/centro-cultural-dr-pedro-marini" style="text-decoration: underline;">Turismo em Uruguaiana</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.tripadvisor.com.br/Attraction_Review-g681230-d4453220-Reviews-Centro_Cultural_Dr_Pedro_Marini-Uruguaiana_State_of_Rio_Grande_do_Sul.html" style="text-decoration: underline;">Tripadvisor</a></li>
+                  <li>Local: 2720 RUA. Santana Uruguaiana, Rio Grande do Sul</li>
+                  <li>Celular: (55) 55 95555-5555</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright black">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+          </div>
+        </footer>
 
 </body>
 
