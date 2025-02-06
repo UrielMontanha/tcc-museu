@@ -154,7 +154,7 @@ $objeto = mysqli_fetch_assoc($resultado);
             while ($linha = mysqli_fetch_assoc($resultado_coment)) {
 
                 if ($id_obj == $linha['id_obj']) {
-                    echo "<h6><b>" . $linha['nome'] . "</b>  comentou: </h6>" . date('d/m/Y', strtotime($linha['data_comentario'])) . "<br><br>" . $linha['comentario'] . "<br><br>";
+                    echo "<h6><b>" . $linha['nome'] . "</b>  comentou: <br>" . date('d/m/Y', strtotime($linha['data_comentario'])) . "</h6><br>" . $linha['comentario'] . "<br><br>";
                 
 
                     if (isset($_SESSION['id_usuario']) && ($_SESSION['id_usuario'] == $linha['id_usuario'] || $_SESSION['status'] == 1)) {
